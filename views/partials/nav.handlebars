@@ -1,0 +1,24 @@
+<nav class="navbar is-light nav-margin" role="navigation" aria-label="main navigation">
+    <div class="navbar-start">
+        <div class="navbar-brand navbar-item">
+            <a href="/">
+                <h1 class="title">Budget!</h1>
+            </a>
+        </div>
+        {{#if usernav}}
+            
+            <div class="navbar-menu">
+                {{> tabs}}
+            </div>
+            
+        {{/if}}
+    </div>
+
+    <div class="navbar-end">
+        <div class="navbar-item">
+            <a href="/user" class="button is-primary">Login</a>
+        </div>
+    </div>
+    
+</nav>
+
