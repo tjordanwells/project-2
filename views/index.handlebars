@@ -1,10 +1,82 @@
 {{> nav}}
 
-<div class="container has-background-white">
-  <h1 class="title">Welcome to the budget app</h1>
+<div class="hero is-medium is-primary is-bold">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        KB Kind Budget
+      </h1>
+      <h2 class="subtitle">
+        The easy way to budget
+      </h2>
+      <button class="button is-danger" id="userAuth">Login or Sign Up</button>
+    </div>
+  </div>
 </div>
 
+<!--Login Modal-->
+<div class="modal">
+  <div class="modal-background"></div>
+  
+  <div class="modal-card">
+
+    <header class="modal-card-head">
+      <p class="modal-card-title">Login or Signup</p>
+    </header>
+    
+
+    <section class="modal-card-body">
+      <div>
+          <div class="field has-addons">
+          <p class="control">
+            <a class="button is-info is-active" id="login">
+              <span>Login</span>
+            </a>
+          </p>
+          <p class="control">
+            <a class="button" id="signup">
+              <span>Signup</span>
+            </a>
+          </p>
+        </div>
+      </div>
+      <!--Forms-->
+
+      <div id="forms">
+        
+        <!--user email-->
+        <div class="field">
+          <label class="label">Email</label>
+          <div class="control">
+            <input type="text" class="input" id="userEmail" placeholder="your.email@mail.com">
+          </div>
+        </div>
+
+        <!--User password-->
+        <div class="field">
+          <label class="label">Password</label>
+          <div class="control">
+            <input type="text" class="input" id="userPassword" placeholder="Enter your password">
+          </div>
+        </div>  
+      </div>
+
+      </section>
+
+      <!--submit buttons-->
+      <footer class="modal-card-foot">
+        <button class="button is-success" id="submit">login</button>
+        <button class="button is-danger" id="cancel">Cancel</button>
+      </footer>
+    
+    </div>
+      <button class="modal-close is-large" id="close" aria-label="close"></button>
+  </div>
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="../public/js/index.js"></script>
+
+
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="/js/index.js"></script>
