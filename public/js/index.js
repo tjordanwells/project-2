@@ -11,7 +11,11 @@ $("#login").on("click", function() {
   var emailInput = textInput("Email", "userEmail", "your.email@mail.com");
   $("#forms").append(emailInput);
 
-  var passwordInput = textInput("Password", "userPassword", "Enter your password");
+  var passwordInput = textInput(
+    "Password",
+    "userPassword",
+    "Enter your password"
+  );
   $("#forms").append(passwordInput);
 });
 
@@ -26,10 +30,16 @@ $("#signup").on("click", function() {
   var emailInput = textInput("Email", "userEmail", "your.email@mail.com");
   $("#forms").append(emailInput);
 
-  var passwordInput = textInput("Password", "userPassword", "Enter your password");
+  var passwordInput = textInput(
+    "Password",
+    "userPassword",
+    "Enter your password");
   $("#forms").append(passwordInput);
 
-  var confirmPasswordInput = textInput("Re-Enter Password", "confirmPassword", "Enter your password");
+  var confirmPasswordInput = textInput(
+    "Re-Enter Password",
+    "confirmPassword",
+    "Enter your password");
   $("#forms").append(confirmPasswordInput);
 
   $("#submit").text("Sign up!");
