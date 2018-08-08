@@ -33,13 +33,15 @@ $("#signup").on("click", function() {
   var passwordInput = textInput(
     "Password",
     "userPassword",
-    "Enter your password");
+    "Enter your password"
+  );
   $("#forms").append(passwordInput);
 
   var confirmPasswordInput = textInput(
     "Re-Enter Password",
     "confirmPassword",
-    "Enter your password");
+    "Enter your password"
+  );
   $("#forms").append(confirmPasswordInput);
 
   $("#submit").text("Sign up!");
