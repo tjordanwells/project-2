@@ -13,7 +13,24 @@ module.exports = function(app) {
   app.get("/user/planned", function(req, res) {
     res.render("user", {
       usernav: true,
+      section: "Planned",
       userData: dummy.budget.planned
+    });
+  });
+
+  app.get("/user/spent", function(req, res) {
+    res.render("user", {
+      usernav: true,
+      section: "Spent",
+      userData: dummy.budget.spent
+    });
+  });
+
+  app.get("/user/remaining", function(req, res) {
+    res.render("user", {
+      usernav: true,
+      section: "Remaining",
+      userData: dummy.budget.remaining
     });
   });
 

@@ -1,3 +1,8 @@
+//toggle is-active class for nav menu
+$(".tab").on("click", function() {
+  $(".tab").removeClass("is-active");
+});
+
 //toggles the entries for all categories
 $(".caret-margin").on("click", function() {
   var id = "#" + $(this).attr("data-category");
