@@ -24,8 +24,8 @@ $("#signup").on("click", function() {
   $("#signup").addClass("is-info is-active");
 
   $("#forms").empty();
-  var message = $("<p>").text("Enter your email to register");
-  $("#forms").append(message);
+  var name = textInput("Name", "username", "John Smith");
+  $("#forms").append(name);
 
   var emailInput = textInput("Email", "userEmail", "your.email@mail.com");
   $("#forms").append(emailInput);
@@ -40,7 +40,7 @@ $("#signup").on("click", function() {
   var confirmPasswordInput = textInput(
     "Re-Enter Password",
     "confirmPassword",
-    "Enter your password"
+    "Confirm password"
   );
   $("#forms").append(confirmPasswordInput);
 
