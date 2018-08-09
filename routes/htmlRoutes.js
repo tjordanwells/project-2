@@ -1,4 +1,5 @@
 var db = require("../models");
+var dummy = require("../dummydata");
 
 module.exports = function(app) {
   // Load index page
@@ -9,9 +10,10 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/user", function(req, res) {
+  app.get("/user/planned", function(req, res) {
     res.render("user", {
-      usernav: true
+      usernav: true,
+      userData: dummy.budget.planned
     });
   });
 

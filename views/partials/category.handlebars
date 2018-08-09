@@ -1,11 +1,16 @@
-<div class="level">
-    <h3 class="subtitle has-text-weight-bold level-item">Housing</h3>
-    <span class="subtitle level-item has-text-success">$amount</span>
-    <div class="level-item">
-        <span class="icon is-medium"><i class="fas fa-caret-up fa-2x carat-margin"></i></span>
+
+<div class="columns">
+
+    <div class="column">
+        <h3 class="subtitle has-text-weight-bold m-lg-left">{{category}}</h3>
     </div>
 
-    <hr>
-    
-    
+    <div class="column has-text-centered">
+        <span class="subtitle has-text-success">{{total}}</span>        
+    </div>
+
+    <div class="column has-text-centered">
+        <span class="icon is-medium"><i class="fas fa-caret-up fa-2x caret-margin" data-category={{category}}></i></span>
+    </div>
+
 </div>

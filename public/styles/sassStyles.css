@@ -1,3 +1,19 @@
+/**Padding styles**/
+.p-sm {
+  padding: 1.5rem; }
+
+.m-sm-left {
+  margin-left: 1.5rem; }
+
+.m-lg-left {
+  margin-left: 5rem; }
+
+.m-xlg-left {
+  margin-left: 6.5rem; }
+
+.hidden {
+  display: none; }
+
 @keyframes spinAround {
   from {
     transform: rotate(0deg); }
