@@ -3,8 +3,36 @@
 
 $purple: #8A4D76;
 $yellow: yellow;
+<<<<<<< HEAD
 $box-shadow: 0 2px 3px rgba($black, 0.1), 0 0 0 1px rgba($black, 0.1);
+=======
 
+$small: 1.5rem;
+$medium: 3rem;
+$large: 5rem;
+$xlarge: 6.5rem;
+>>>>>>> 6c37de0b0e4e45622e3c0651b0dba9c91386aaec
+
+/**Padding styles**/
+.p-sm {
+    padding: $small;
+}
+
+.m-sm-left {
+    margin-left: $small;
+}
+
+.m-lg-left {
+    margin-left: $large;
+}
+
+.m-xlg-left {
+    margin-left: $xlarge;
+}
+
+.hidden {
+    display: none;
+}
 
 @import "../../node_modules/bulma/sass/utilities/_all.sass";
 
