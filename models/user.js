@@ -25,5 +25,68 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
+  User.associate = function(models) {
+    models.User.hasMany(models.Income, {
+      onDelete: "cascade",
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
+
+  User.associate = function(models) {
+    models.User.hasMany(models.Housing, {
+      onDelete: "cascade",
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
+
+  User.associate = function(models) {
+    models.User.hasMany(models.Food, {
+      onDelete: "cascade",
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
+
+  User.associate = function(models) {
+    models.User.hasMany(models.Transportation, {
+      onDelete: "cascade",
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
+
+  User.associate = function(models) {
+    models.User.hasMany(models.Savings, {
+      onDelete: "cascade",
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
+
+  User.associate = function(models) {
+    models.User.hasMany(models.Debt, {
+      onDelete: "cascade",
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
+
+  User.associate = function(models) {
+    models.User.hasMany(models.Misc, {
+      onDelete: "cascade",
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
+
   return User;
 };

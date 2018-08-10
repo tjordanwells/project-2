@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
-  var Income = sequelize.define("Income", {
-    incomeSource: {
+  var Food = sequelize.define("Food", {
+    expense: {
       type: DataTypes.STRING,
       validate: {
         len: [10 - 100]
@@ -22,13 +22,13 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  Income.associate = function(models) {
-    Income.belongsTo(models.User, {
+  Food.associate = function(models) {
+    Food.belongsTo(models.User, {
       foreignKey: {
         allowNull: false
       }
     });
   };
 
-  return Income;
+  return Food;
 };
