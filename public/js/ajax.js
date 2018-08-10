@@ -3,7 +3,7 @@ $("#signup").on("click", function(event) {
   var newUser = {
     email: $("#userEmail").val().trim(),
     password: $("#userPassword").val().trim(),
-    name: $("#userName").val().trim()
+    name: $("#username").val().trim()
   };
 
   $.post("/api/users", newUser).then(function(data) {
