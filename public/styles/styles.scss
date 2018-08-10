@@ -4,7 +4,31 @@
 $purple: #8A4D76;
 $yellow: yellow;
 
+$small: 1.5rem;
+$medium: 3rem;
+$large: 5rem;
+$xlarge: 6.5rem;
 
+/**Padding styles**/
+.p-sm {
+    padding: $small;
+}
+
+.m-sm-left {
+    margin-left: $small;
+}
+
+.m-lg-left {
+    margin-left: $large;
+}
+
+.m-xlg-left {
+    margin-left: $xlarge;
+}
+
+.hidden {
+    display: none;
+}
 
 @import "../../node_modules/bulma/sass/utilities/_all.sass";
 
