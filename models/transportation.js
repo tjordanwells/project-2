@@ -25,7 +25,6 @@ module.exports = function(sequelize, DataTypes) {
   Transportation.associate = function(models) {
     Transportation.belongsTo(models.User, {
       foreignKey: {
-        name: userId,
         allowNull: false
       }
     });

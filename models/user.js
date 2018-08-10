@@ -79,7 +79,14 @@ module.exports = function(sequelize, DataTypes) {
     });
   };
 
-  
+  User.associate = function(models) {
+    models.User.hasMany(models.Misc, {
+      onDelete: "cascade",
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
 
   return User;
 };
