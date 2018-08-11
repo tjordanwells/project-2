@@ -3,27 +3,26 @@ module.exports = function(sequelize, DataTypes) {
     incomeSource: {
       type: DataTypes.STRING,
       validate: {
-        len: [10 - 100]
+        len: [3 - 100]
       }
     },
     plan: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.DECIMAL(12, 2),
       validate: {
         len: [1],
         isNumeric: true
       }
     },
-    spent: {
-      type: DataTypes.INTEGER,
+    effectiveDate: {
+      type: DataTypes.DATEONLY,
       validate: {
-        len: [1],
-        isNumeric: true
+        isDate: true
       }
     }
   });
 
   Income.associate = function(models) {
-    Income.belongsTo(models.User, {
+    models.Income.belongsTo(models.User, {
       foreignKey: {
         allowNull: false
       }

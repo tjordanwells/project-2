@@ -32,55 +32,22 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false
       }
     });
-  };
 
-  User.associate = function(models) {
-    models.User.hasMany(models.Housing, {
+    models.User.hasMany(models.Expense, {
       onDelete: "cascade",
       foreignKey: {
         allowNull: false
       }
     });
-  };
 
-  User.associate = function(models) {
-    models.User.hasMany(models.Food, {
+    models.User.hasMany(models.Category, {
       onDelete: "cascade",
       foreignKey: {
         allowNull: false
       }
     });
-  };
 
-  User.associate = function(models) {
-    models.User.hasMany(models.Transportation, {
-      onDelete: "cascade",
-      foreignKey: {
-        allowNull: false
-      }
-    });
-  };
-
-  User.associate = function(models) {
-    models.User.hasMany(models.Savings, {
-      onDelete: "cascade",
-      foreignKey: {
-        allowNull: false
-      }
-    });
-  };
-
-  User.associate = function(models) {
-    models.User.hasMany(models.Debt, {
-      onDelete: "cascade",
-      foreignKey: {
-        allowNull: false
-      }
-    });
-  };
-
-  User.associate = function(models) {
-    models.User.hasMany(models.Misc, {
+    models.User.hasMany(models.subCategory, {
       onDelete: "cascade",
       foreignKey: {
         allowNull: false
