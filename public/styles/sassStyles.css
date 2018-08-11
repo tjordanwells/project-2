@@ -8,8 +8,17 @@
 .p-lg {
   padding: 5rem; }
 
+.p-sm-top {
+  margin-top: 1.5rem; }
+
 .p-sm-bottom {
   margin-bottom: 1.5rem; }
+
+.p-sm-left {
+  margin-left: 1.5rem; }
+
+.p-sm-right {
+  margin-right: 1.5rem; }
 
 .p-lg-bottom {
   margin-bottom: 5rem; }
@@ -17,6 +26,12 @@
 /**margin styles**/
 .m-sm {
   margin: 1.5rem; }
+
+.m-xsm-bottom {
+  margin-bottom: 0.5rem; }
+
+.m-sm-bottom {
+  margin-bottom: 1.5rem; }
 
 .m-sm-left {
   margin-left: 1.5rem; }
@@ -33,6 +48,10 @@
 /**for toggle**/
 .hidden {
   display: none; }
+
+/**tabs**/
+.tab:hover {
+  cursor: pointer; }
 
 /**entries table styling**/
 .flex-center {
