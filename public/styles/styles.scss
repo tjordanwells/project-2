@@ -7,6 +7,7 @@ $yellow: yellow;
 $box-shadow: 0 2px 3px rgba($black, 0.1), 0 0 0 1px rgba($black, 0.1);
 =======
 
+$xsmall: 0.5rem;
 $small: 1.5rem;
 $medium: 3rem;
 $large: 5rem;
@@ -26,8 +27,20 @@ $xlarge: 6.5rem;
     padding: $large;
 }
 
+.p-sm-top {
+    margin-top: $small;
+}
+
 .p-sm-bottom {
     margin-bottom: $small;
+}
+
+.p-sm-left {
+    margin-left: $small;
+}
+
+.p-sm-right {
+    margin-right: $small;
 }
 
 .p-lg-bottom{
@@ -37,6 +50,14 @@ $xlarge: 6.5rem;
 /**margin styles**/
 .m-sm {
     margin: $small;
+}
+
+.m-xsm-bottom {
+    margin-bottom: $xsmall;
+}
+
+.m-sm-bottom {
+    margin-bottom: $small;
 }
 
 .m-sm-left {
@@ -61,7 +82,10 @@ $xlarge: 6.5rem;
     display: none;
 }
 
-
+/**tabs**/
+.tab:hover {
+    cursor: pointer;
+};
 
 /**entries table styling**/
 .flex-center {
