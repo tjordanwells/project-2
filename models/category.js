@@ -10,13 +10,22 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   Category.associate = function(models) {
-    models.Category.hasMany(models.Expense, {
+    models.Category.hasMany(models.Plan, {
+      onDelete: "cascade",
+      foreignKey: {
+        allowNull: false
+      }
+    });
+
+    models.Category.hasMany(models.Spent, {
+      onDelete: "cascade",
       foreignKey: {
         allowNull: false
       }
     });
 
     models.Category.hasMany(models.subCategory, {
+      onDelete: "cascade",
       foreignKey: {
         allowNull: false
       }

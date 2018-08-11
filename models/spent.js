@@ -1,28 +1,13 @@
 module.exports = function(sequelize, DataTypes) {
-  var Expense = sequelize.define("Expense", {
-    expense: {
+  var Spent = sequelize.define("Spent", {
+    entry: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [3 - 100]
       }
     },
-    plan: {
-      type: DataTypes.DECIMAL(12, 2),
-      allowNull: false,
-      validate: {
-        len: [1],
-        isNumeric: true
-      }
-    },
-    planDate: {
-      type: DataTypes.DATEONLY,
-      allowNull: false,
-      validate: {
-        isDate: true
-      }
-    },
-    spent: {
+    amount: {
       type: DataTypes.DECIMAL(12, 2),
       allowNull: true,
       validate: {
@@ -30,7 +15,7 @@ module.exports = function(sequelize, DataTypes) {
         isNumeric: true
       }
     },
-    spentDate: {
+    effectiveDate: {
       type: DataTypes.DATEONLY,
       allowNull: true,
       validate: {
@@ -39,25 +24,28 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  Expense.associate = function(models) {
-    models.Expense.belongsTo(models.User, {
+  Spent.associate = function(models) {
+    models.Spent.belongsTo(models.User, {
+      onDelete: "cascade",
       foreignKey: {
         allowNull: false
       }
     });
 
-    models.Expense.belongsTo(models.Category, {
+    models.Plan.belongsTo(models.Category, {
+      onDelete: "cascade",
       foreignKey: {
         allowNull: false
       }
     });
 
-    models.Expense.belongsTo(models.subCategory, {
+    models.Plan.belongsTo(models.subCategory, {
+      onDelete: "cascade",
       foreignKey: {
         allowNull: true
       }
     });
   };
 
-  return Expense;
+  return Spent;
 };

@@ -1,13 +1,13 @@
 module.exports = function(sequelize, DataTypes) {
-  var Income = sequelize.define("Income", {
-    incomeSource: {
+  var Plan = sequelize.define("Plan", {
+    entry: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [3 - 100]
       }
     },
-    plan: {
+    amount: {
       type: DataTypes.DECIMAL(12, 2),
       allowNull: true,
       validate: {
@@ -24,13 +24,28 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  Income.associate = function(models) {
-    models.Income.belongsTo(models.User, {
+  Plan.associate = function(models) {
+    models.Plan.belongsTo(models.User, {
+      onDelete: "cascade",
       foreignKey: {
         allowNull: false
       }
     });
+
+    models.Plan.belongsTo(models.Category, {
+      onDelete: "cascade",
+      foreignKey: {
+        allowNull: false
+      }
+    });
+
+    models.Plan.belongsTo(models.subCategory, {
+      onDelete: "cascade",
+      foreignKey: {
+        allowNull: true
+      }
+    });
   };
 
-  return Income;
+  return Plan;
 };

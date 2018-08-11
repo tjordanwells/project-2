@@ -5,7 +5,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       unique: true,
       validate: {
-        len: [10, 100],
+        len: [1, 100],
         isEmail: true
       }
     },
@@ -26,31 +26,31 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   User.associate = function(models) {
-    models.User.hasMany(models.Income, {
+    models.User.hasMany(models.Plan, {
       onDelete: "cascade",
       foreignKey: {
-        allowNull: false
+        allowNull: true
       }
     });
 
-    models.User.hasMany(models.Expense, {
+    models.User.hasMany(models.Spent, {
       onDelete: "cascade",
       foreignKey: {
-        allowNull: false
+        allowNull: true
       }
     });
 
     models.User.hasMany(models.Category, {
       onDelete: "cascade",
       foreignKey: {
-        allowNull: false
+        allowNull: true
       }
     });
 
     models.User.hasMany(models.subCategory, {
       onDelete: "cascade",
       foreignKey: {
-        allowNull: false
+        allowNull: true
       }
     });
   };
