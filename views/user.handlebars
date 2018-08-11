@@ -1,37 +1,40 @@
 {{> nav}}
 
-<div class="container has-background-white" id="budget">
+<div class="container has-background-white p-md m-lg-bottom" id="budget">
     <h1 class="title">{{section}}</h1>
     <br>
 
-    <div class="level">
-        <div class="level-item">
-            <div class="field has-addons">
-                <div class="control">
-                    <input type="text" id="newEntry" class="input" placeholder="Add expense">
-                </div>
-                <div class="control">
-                    <span class="select">
-                        <select name="category" id="topCategory">
-                            <option value="">Select Category</option>
-                            {{#each userData}}
-                            <option value="{{category}}">{{category}}</option>
-                            {{/each}}
-                        </select>
-                    </span>
-                </div>
-                <div class="control">
-                    <button class="button is-primary">Add</button>
-                </div>
+    <div class="flex-center p-md">
+        <div class="field has-addons">
+            <div class="control">
+                <input type="text" id="newEntry" class="input" placeholder="New Entry">
+            </div>
+            <div class="control">
+                <input type="text" id="newAmount" class="input" placeholder="Amount">
+            </div>
+            <div class="control">
+                <span class="select">
+                    <select name="category" id="topCategory">
+                        <option value="">Select Category</option>
+                        {{#each userData}}
+                        <option value="{{category}}">{{category}}</option>
+                        {{/each}}
+                    </select>
+                </span>
+            </div>
+            <div class="control">
+                <button class="button is-primary">Add</button>
             </div>
         </div>
     </div>
 
     {{#each userData}}
-        <div id={{category}}>
-            {{> category}}
+        <table class="table is-fullwidth is-striped" id={{category}}>
+            {{> category}} 
+            
             {{> entries}}
-        </div>
+        </table>
+            
     {{/each}}
     
 </div>

@@ -1,18 +1,46 @@
-<div class="entries hidden">
+
+<tbody class="entries hidden p-sm-bottom tbody-corrections">
     
+    <tr>
+        <td colspan="3">
+            <div class="flex-center">
+                <div class="field has-addons p-sm">
+                    <div class="control entry-width">
+                        <input type="text" class="input entry-width" id="newEntry{{category}}" placeholder="New entry">
+                    </div>
+                    <div class="control amount-width">
+                        <input type="text" class="input amount-width" id="newAmount{{category}}" placeholder="Amount">
+                    </div>
+                    <div class="control">
+                        <span class="select">
+                            <select id="category{{category}}" disabled>
+                                <option value="{{category}}">{{category}}</option>
+                            </select>
+                        </span>
+                    </div>
+                    <div class="control">
+                        <button class="button is-primary" id="add{{category}}">Add</button>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    
+
     {{#each entries}}
-        <div class="columns">
-
-            <div class="column">
+        <tr>
+            <td>
                 <h3 class="m-xlg-left">{{name}}</h3>
-            </div>
-
-            <div class="column has-text-centered">
+            </td>
+            <td>
                 <span class="m-sm-left">{{amount}}</span>        
-            </div>
-
-            <div class="column"></div>
-        </div>
-
+            </td>
+            <td>
+                <i class="fas fa-ellipsis-h"></i>
+            </td>
+        </tr>
     {{/each}}
-</div>
+
+</tbody>
+
+    
