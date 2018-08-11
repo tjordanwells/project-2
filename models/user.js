@@ -25,5 +25,35 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
+  User.associate = function(models) {
+    models.User.hasMany(models.Income, {
+      onDelete: "cascade",
+      foreignKey: {
+        allowNull: false
+      }
+    });
+
+    models.User.hasMany(models.Expense, {
+      onDelete: "cascade",
+      foreignKey: {
+        allowNull: false
+      }
+    });
+
+    models.User.hasMany(models.Category, {
+      onDelete: "cascade",
+      foreignKey: {
+        allowNull: false
+      }
+    });
+
+    models.User.hasMany(models.subCategory, {
+      onDelete: "cascade",
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
+
   return User;
 };
