@@ -2,12 +2,14 @@ module.exports = function(sequelize, DataTypes) {
   var Expense = sequelize.define("Expense", {
     expense: {
       type: DataTypes.STRING,
+      allowNull: false,
       validate: {
         len: [3 - 100]
       }
     },
     plan: {
       type: DataTypes.DECIMAL(12, 2),
+      allowNull: false,
       validate: {
         len: [1],
         isNumeric: true
@@ -15,12 +17,14 @@ module.exports = function(sequelize, DataTypes) {
     },
     planDate: {
       type: DataTypes.DATEONLY,
+      allowNull: false,
       validate: {
         isDate: true
       }
     },
     spent: {
       type: DataTypes.DECIMAL(12, 2),
+      allowNull: true,
       validate: {
         len: [1],
         isNumeric: true
@@ -28,6 +32,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     spentDate: {
       type: DataTypes.DATEONLY,
+      allowNull: true,
       validate: {
         isDate: true
       }
