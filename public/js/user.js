@@ -53,3 +53,24 @@ $(".dropdown-content > button").on("click", function() {
     alert("remove me!");
   }
 });
+
+$(".add").on("click", function() {
+  var action = $(this).attr("id").split("-");
+  var cat = action[1];
+  console.log(action);
+  var newEntry = {
+    name: $("#newEntry" + cat).val().trim(),
+    amount: $("#newAmount" + cat).val().trim(),
+    category: $("#category" + cat).val()
+  }
+  console.log(newEntry);
+});
+
+$("#addEntry").on("click", function() {
+  var newEntry = {
+    name: $("#newEntry").val().trim(),
+    amount: $("#newEntry").val().trim(),
+    category: $("#topCategory").val().trim()
+  }
+  console.log(newEntry);
+});
