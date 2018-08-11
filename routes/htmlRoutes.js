@@ -4,8 +4,8 @@ var dummy = require("../dummydata");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      console.log(dbExamples);
+    db.User.findAll({}).then(function(dbUsers) {
+      console.log(dbUsers);
       res.render("index");
     });
   });
@@ -13,7 +13,11 @@ module.exports = function(app) {
   app.get("/user/planned", function(req, res) {
     res.render("user", {
       usernav: true,
-      section: "Planned",
+      section: {
+        planned: true,
+        spent: false,
+        remaining: false
+      },
       userData: dummy.budget.planned
     });
   });
@@ -21,7 +25,11 @@ module.exports = function(app) {
   app.get("/user/spent", function(req, res) {
     res.render("user", {
       usernav: true,
-      section: "Spent",
+      section: {
+        planned: false,
+        spent: true,
+        remaining: false
+      },
       userData: dummy.budget.spent
     });
   });
@@ -29,7 +37,11 @@ module.exports = function(app) {
   app.get("/user/remaining", function(req, res) {
     res.render("user", {
       usernav: true,
-      section: "Remaining",
+      section: {
+        planned: false,
+        spent: false,
+        remaining: true
+      },
       userData: dummy.budget.remaining
     });
   });
