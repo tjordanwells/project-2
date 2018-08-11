@@ -11,12 +11,14 @@ $(".caret-margin").on("click", function() {
     $(id)
       .children(".entries")
       .removeClass("hidden");
+      //.addClass("flex-center");
     $(this).removeClass("fa-caret-up");
     $(this).addClass("fa-caret-down");
   } else {
     $(id)
       .children(".entries")
-      .addClass("hidden");
+      .addClass("hidden")
+      .removeClass("flex-center");
     $(this).removeClass("fa-caret-down");
     $(this).addClass("fa-caret-up");
   }
