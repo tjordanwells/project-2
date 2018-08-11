@@ -43,7 +43,10 @@ $(".dropdown-content > button").on("click", function() {
   console.log(action);
 
   if (action[1] === "edit") {
-    alert("edit me!");
+    var id = "#entry-" + action[0];
+    //alert("edit me! " + id);
+    console.log($(this).parents(".entry"));
+    
   } else if (action[1] === "move") {
     alert("move me!");
   } else if (action[1] === "delete") {

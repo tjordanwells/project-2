@@ -30,10 +30,10 @@
     {{#each entries}}
         <tr>
             <td>
-                <h3 class="m-xlg-left">{{name}}</h3>
+                <h3 class="entry m-xlg-left" id="entry-{{name}}">{{name}}</h3>
             </td>
             <td>
-                <span class="m-sm-left">{{amount}}</span>        
+                <span class="amount m-sm-left" id="amount-{{name}}">{{amount}}</span>        
             </td>
             <td>
                 <div class="dropdown">
