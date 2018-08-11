@@ -1,21 +1,25 @@
 {{> nav}}
 
 <div class="container has-background-white p-md m-lg-bottom" id="budget">
-    <h1 class="title">{{section}}</h1>
+
+            <span class="tab title is-1 p-sm-left p-sm-right">Planned</span>
+            <span class="tab title is-1 p-sm-left p-sm-right has-text-grey-lighter">Spent</span>
+            <span class="tab title is-1 p-sm-left p-sm-right has-text-grey-lighter">Remaining</span>
+
     <br>
 
     <div class="flex-center p-md">
         <div class="field has-addons">
             <div class="control">
-                <input type="text" id="newEntry" class="input" placeholder="New Entry">
+                <input type="text" id="newEntry" class="input is-primary" placeholder="New Entry">
             </div>
             <div class="control">
-                <input type="text" id="newAmount" class="input" placeholder="Amount">
+                <input type="text" id="newAmount" class="input is-primary" placeholder="Amount">
             </div>
             <div class="control">
-                <span class="select">
+                <span class="select is-primary">
                     <select name="category" id="topCategory">
-                        <option value="">Select Category</option>
+                        <option value="select">Select Category</option>
                         {{#each userData}}
                         <option value="{{category}}">{{category}}</option>
                         {{/each}}

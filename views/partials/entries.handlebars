@@ -6,13 +6,13 @@
             <div class="flex-center">
                 <div class="field has-addons p-sm">
                     <div class="control entry-width">
-                        <input type="text" class="input entry-width" id="newEntry{{category}}" placeholder="New entry">
+                        <input type="text" class="input is-primary" id="newEntry{{category}}" placeholder="New entry">
                     </div>
                     <div class="control amount-width">
-                        <input type="text" class="input amount-width" id="newAmount{{category}}" placeholder="Amount">
+                        <input type="text" class="input is-primary" id="newAmount{{category}}" placeholder="Amount">
                     </div>
                     <div class="control">
-                        <span class="select">
+                        <span class="select is-primary">
                             <select id="category{{category}}" disabled>
                                 <option value="{{category}}">{{category}}</option>
                             </select>
@@ -36,7 +36,21 @@
                 <span class="m-sm-left">{{amount}}</span>        
             </td>
             <td>
-                <i class="fas fa-ellipsis-h"></i>
+                <div class="dropdown">
+                    <div class="dropdown-trigger">
+                        <span aria-haspopup="true" aria-controls="{{name}}-menu"><i class="icon fas fa-ellipsis-h"></i></span>
+                    </div>
+                    <div class="dropdown-menu" id="{{name}}-menu" role="menu">
+                        <div class="dropdown-content p-sm">
+                           
+                                <button class="button is-info is-fullwidth m-xsm-bottom" id="{{name}}-edit">Edit</button>
+                                <button class="button is-danger is-fullwidth" id="{{name}}-delete">Delete</button>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                
             </td>
         </tr>
     {{/each}}
