@@ -14,6 +14,27 @@ $xlarge: 6.5rem;
     padding: $small;
 }
 
+.p-md {
+    padding: $medium;
+}
+
+.p-lg {
+    padding: $large;
+}
+
+.p-sm-bottom {
+    margin-bottom: $small;
+}
+
+.p-lg-bottom{
+    margin-bottom: $large;
+}
+
+/**margin styles**/
+.m-sm {
+    margin: $small;
+}
+
 .m-sm-left {
     margin-left: $small;
 }
@@ -26,11 +47,46 @@ $xlarge: 6.5rem;
     margin-left: $xlarge;
 }
 
+.m-lg-bottom {
+    margin-bottom: $large;
+}
+
+/**for toggle**/
+
 .hidden {
     display: none;
 }
 
-@import "../../node_modules/bulma/sass/utilities/_all.sass";
 
+
+/**entries table styling**/
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    
+}
+
+.flex-column { 
+    flex-direction: column;
+}
+
+/**tables**/
+
+.tbody-corrections {
+    margin-top: 20px;
+}
+/**60%, 30%, 20%**/
+tr > th:nth-child(1) {
+    width: 50%;
+}
+
+
+
+@import "../../node_modules/bulma/sass/utilities/_all.sass";
+.hr{
+    border-bottom: solid 1px $grey-lighter;
+}
 
 @import "../../node_modules/bulma/bulma.sass";
