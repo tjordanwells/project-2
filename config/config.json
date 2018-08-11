@@ -1,7 +1,11 @@
 {
   "development": {
     "username": "root",
+<<<<<<< HEAD
     "password": "password",
+=======
+    "password": "root",
+>>>>>>> 9714785f655580ef0471395e7e5922fcbbc282b6
     "database": "budget",
     "host": "localhost",
     "dialect": "mysql"

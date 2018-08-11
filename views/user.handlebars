@@ -1,10 +1,15 @@
 {{> nav}}
 
 <div class="container has-background-white p-md m-lg-bottom" id="budget">
-
-            <span class="tab title is-1 p-sm-left p-sm-right">Planned</span>
-            <span class="tab title is-1 p-sm-left p-sm-right has-text-grey-lighter">Spent</span>
-            <span class="tab title is-1 p-sm-left p-sm-right has-text-grey-lighter">Remaining</span>
+            <a href="/user/planned">
+                <span class="tab title is-1 p-sm-left p-sm-right {{#unless section.planned}}has-text-grey-lighter{{/unless}}" id="planned">Planned</span>
+            </a>
+            <a href="/user/spent">
+                <span class="tab title is-1 p-sm-left p-sm-right {{#unless section.spent}}has-text-grey-lighter{{/unless}}" id="spent">Spent</span>
+            </a>
+            <a href="/user/remaining">            
+                <span class="tab title is-1 p-sm-left p-sm-right {{#unless section.remaining}}has-text-grey-lighter{{/unless}}" id="remaining">Remaining</span>
+            </a>
 
     <br>
 

@@ -30,10 +30,10 @@
     {{#each entries}}
         <tr>
             <td>
-                <h3 class="m-xlg-left">{{name}}</h3>
+                <h3 class="entry m-xlg-left" id="entry-{{name}}">{{name}}</h3>
             </td>
             <td>
-                <span class="m-sm-left">{{amount}}</span>        
+                <span class="amount m-sm-left" id="amount-{{name}}">{{amount}}</span>        
             </td>
             <td>
                 <div class="dropdown">
@@ -42,11 +42,9 @@
                     </div>
                     <div class="dropdown-menu" id="{{name}}-menu" role="menu">
                         <div class="dropdown-content p-sm">
-                           
-                                <button class="button is-info is-fullwidth m-xsm-bottom" id="{{name}}-edit">Edit</button>
-                                <button class="button is-danger is-fullwidth" id="{{name}}-delete">Delete</button>
-                            
-                            
+                            <button class="button is-info is-fullwidth m-xsm-bottom" id="{{name}}-edit">Edit</button>
+                            <button class="button is-info is-fullwidth m-xsm-bottom" id="{{name}}-move">Move</button>
+                            <button class="button is-danger is-fullwidth" id="{{name}}-delete">Delete</button>
                         </div>
                     </div>
                 </div>
