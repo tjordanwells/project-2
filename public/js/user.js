@@ -44,9 +44,9 @@ $(".dropdown-content > button").on("click", function() {
 
   if (action[1] === "edit") {
     alert("edit me!");
-  } else if(action[1] === "move") {
+  } else if (action[1] === "move") {
     alert("move me!");
-  } else if(action[1] === "delete") {
+  } else if (action[1] === "delete") {
     alert("remove me!");
   }
 });
