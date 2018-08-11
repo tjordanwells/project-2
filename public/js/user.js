@@ -35,3 +35,18 @@ $(".fa-ellipsis-h").on("click", function() {
     $dropdown.addClass("is-active");
   }
 });
+
+$(".dropdown-content > button").on("click", function() {
+  var action = $(this)
+    .attr("id")
+    .split("-");
+  console.log(action);
+
+  if (action[1] === "edit") {
+    alert("edit me!");
+  } else if(action[1] === "move") {
+    alert("move me!");
+  } else if(action[1] === "delete") {
+    alert("remove me!");
+  }
+});
