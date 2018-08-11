@@ -69,7 +69,7 @@ $(".add").on("click", function() {
 $("#addEntry").on("click", function() {
   var newEntry = {
     name: $("#newEntry").val().trim(),
-    amount: $("#newEntry").val().trim(),
+    amount: $("#newAmount").val().trim(),
     category: $("#topCategory").val().trim()
   }
   console.log(newEntry);
