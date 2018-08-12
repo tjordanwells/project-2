@@ -1,10 +1,10 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  app.get("/api/users/spent/:userid/", function(req, res) {
+  app.get("/api/spent/:userid/", function(req, res) {
     db.Spent.findAll({
       where: {
-        id: req.params.userid
+        UserId: req.params.userid
       }
     }).then(function(dbSpent) {
       res.send(dbSpent);
