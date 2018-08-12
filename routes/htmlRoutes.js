@@ -4,13 +4,8 @@ var dummy = require("../dummydata");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-<<<<<<< HEAD
-    db.User.findAll({}).then(function(dbUser) {
-      console.log(dbUser);
-=======
     db.User.findAll({}).then(function(dbUsers) {
       console.log(dbUsers);
->>>>>>> 9714785f655580ef0471395e7e5922fcbbc282b6
       res.render("index");
     });
   });
