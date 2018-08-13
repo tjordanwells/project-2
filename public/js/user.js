@@ -43,13 +43,43 @@ $(".dropdown-content > button").on("click", function() {
   console.log(action);
 
   if (action[1] === "edit") {
-    var id = "#entry-" + action[0];
-    //alert("edit me! " + id);
-    console.log($(this).parents(".entry"));
-    
+    alert("edit me! " + id);
   } else if (action[1] === "move") {
     alert("move me!");
   } else if (action[1] === "delete") {
     alert("remove me!");
   }
+});
+
+$(".add").on("click", function() {
+  var action = $(this)
+    .attr("id")
+    .split("-");
+  var cat = action[1];
+  console.log(action);
+  var newEntry = {
+    name: $("#newEntry" + cat)
+      .val()
+      .trim(),
+    amount: $("#newAmount" + cat)
+      .val()
+      .trim(),
+    category: $("#category" + cat).val()
+  };
+  console.log(newEntry);
+});
+
+$("#addEntry").on("click", function() {
+  var newEntry = {
+    name: $("#newEntry")
+      .val()
+      .trim(),
+    amount: $("#newAmount")
+      .val()
+      .trim(),
+    category: $("#topCategory")
+      .val()
+      .trim()
+  }
+  console.log(newEntry);
 });
