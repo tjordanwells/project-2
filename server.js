@@ -27,12 +27,14 @@ require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 require("./routes/spentRoutes")(app);
 require("./routes/userRoutes")(app);
+require("./routes/categoryRoutes")(app);
+require("./routes/subCategoryRoutes")(app);
 
-var syncOptions = { force: true };
+var syncOptions = { force: false };
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
-if (process.env.NODE_ENV === "development") {
+if (process.env.NODE_ENV === "test") {
   syncOptions.force = true;
 }
 
