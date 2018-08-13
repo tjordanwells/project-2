@@ -7,7 +7,7 @@ module.exports = function(app) {
         UserId: req.params.userid
       }
     }).then(function(dbPlan) {
-      res.send(dbPlan);
+      res.json(dbPlan);
     });
   });
 
@@ -16,7 +16,7 @@ module.exports = function(app) {
       res.json(dbPlan);
     });
   });
-  app.delete("api/plan/:id", function(req, res) {
+  app.delete("/api/plan/:id", function(req, res) {
     db.Plan.destroy({
       where: {
         id: req.params.id
@@ -26,7 +26,7 @@ module.exports = function(app) {
     });
   });
 
-  app.put("api/plan", function(req, res) {
+  app.put("/api/plan", function(req, res) {
     db.Plan.update(req.body, {
       where: {
         id: req.body.id
