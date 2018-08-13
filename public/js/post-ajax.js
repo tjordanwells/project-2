@@ -18,8 +18,6 @@ $(document).ready(function() {
     });
   });
 
-
-
   //adding income source and amount
   $("#addIncome").on("click", function(event) {
     event.preventDefault();
