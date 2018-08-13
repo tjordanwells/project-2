@@ -88,9 +88,6 @@ body {
 .tbody-corrections {
   margin-top: 20px; }
 
-tr > th:nth-child(1) {
-  width: 50%; }
-
 /**new entry inputs**/
 .entry-width {
   width: 200px; }
@@ -104,6 +101,34 @@ tr > th:nth-child(1) {
     width: 175px; }
     .select-width > span > select {
       width: 175px; }
+
+@media only screen and (min-width: 600px) {
+  tr > th:nth-child(1) {
+    width: 50%; } }
+
+@media only screen and (max-width: 600px) {
+  .pm-sm {
+    padding: 0.5rem; }
+  .p-sm-right {
+    padding-right: 0.5rem; }
+  .p-sm-left {
+    padding-left: 0.5rem; }
+  .m-lg-left {
+    margin-left: 2rem; }
+  .m-sm-top {
+    margin-top: 0.5rem; }
+  .entry-width {
+    width: 100%; }
+  .amount-width {
+    width: 100%; }
+  .select-width {
+    width: 100%; }
+    .select-width > span {
+      width: 100%; }
+      .select-width > span > select {
+        width: 100%; }
+  tr > th:nth-child(1) {
+    width: 35%; } }
 
 @keyframes spinAround {
   from {
