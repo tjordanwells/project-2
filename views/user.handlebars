@@ -1,6 +1,6 @@
 {{> nav}}
 
-<div class="container has-background-white p-md m-lg-bottom" id="budget">
+<div class="container has-background-white shadow p-md" id="budget">
             <a href="/user/planned">
                 <span class="tab title is-1 p-sm-left p-sm-right {{#unless section.planned}}has-text-grey-lighter{{/unless}}" id="planned">Planned</span>
             </a>
@@ -14,39 +14,22 @@
     <br>
 
     <div class="flex-center p-md">
-        <div class="field has-addons">
-            <div class="control">
-                <input type="text" id="newEntry" class="input is-primary" placeholder="New Entry">
-            </div>
-            <div class="control">
-                <input type="text" id="newAmount" class="input is-primary" placeholder="Amount">
-            </div>
-            <div class="control">
-                <span class="select is-primary">
-                    <select name="category" id="topCategory">
-                        <option value="select">Select Category</option>
-                        {{#each userData}}
-                        <option value="{{category}}">{{category}}</option>
-                        {{/each}}
-                    </select>
-                </span>
-            </div>
-            <div class="control">
-                <button class="button is-primary" id="addEntry">Add</button>
-            </div>
-        </div>
+        {{> input}}
     </div>
 
-    {{#each userData}}
-        <table class="table is-fullwidth is-striped" id={{category}}>
-            {{> category}} 
-            
-            {{> entries}}
-        </table>
-            
-    {{/each}}
-    
+    <div class="flex-center flex-column">
+        {{#each userData}}
+            <table class="table is-fullwidth is-striped" id={{category}}>
+                {{> category}} 
+                
+                {{> entries}}
+            </table>
+        {{/each}}
+    </div>
+
 </div>
+
+{{> footer}}
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="/js/user.js"></script>

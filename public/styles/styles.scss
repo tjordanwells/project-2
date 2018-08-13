@@ -1,15 +1,54 @@
 @charset "utf-8";
 
 
-$purple: #8A4D76;
-$yellow: yellow;
-$box-shadow: 0 2px 3px rgba($black, 0.1), 0 0 0 1px rgba($black, 0.1);
+/**theme colors**/
+$background-color: #a2a8a8;
+$primary-color:#45ADA8; 
+$second-color: #73be85;
+$third-color: #6EB1D9;
+$fourth-color: #fae152;
+$fifth-color:#f3422b; 
+
+$primary: $primary-color;
+$success: $second-color;
+$info: $third-color;
+$warning: $fourth-color;
+$danger: $fifth-color;
+
+$link: $third-color;
+
+
+$box-shadow: 0 2px 3px rgba(black, 0.1), 0 0 0 1px rgba(black, 0.1);
+$footer-background-color: none;
 
 $xsmall: 0.5rem;
 $small: 1.5rem;
 $medium: 3rem;
 $large: 5rem;
 $xlarge: 6.5rem;
+
+.shadow {
+    box-shadow: $box-shadow;
+}
+
+html {
+    background: none;
+    background-color: none;
+}
+
+body {
+    background-color: $background-color;
+  }
+  
+
+  
+  .nav-margin {
+    margin-bottom: 100px;
+  }
+  
+  .carat-margin {
+    margin-bottom: 1.5rem;
+  }
 
 /**Padding styles**/
 .p-sm {
@@ -97,21 +136,42 @@ $xlarge: 6.5rem;
     flex-direction: column;
 }
 
+.flex-bottom {
+    display: flex;
+    align-items: flex-end;
+}
+
 /**tables**/
 
 .tbody-corrections {
     margin-top: 20px;
 }
-/**60%, 30%, 20%**/
+
 tr > th:nth-child(1) {
     width: 50%;
 }
 
+/**new entry inputs**/
+.entry-width {
+    width: 200px;
+}
+
+.amount-width {
+    width: 200px;
+}
+
+.select-width {
+    > span {
+        > select{
+            width: 175px;
+        }
+        width: 175px;
+    }
+    width: 175px;
+}
+
+
 
 
 @import "../../node_modules/bulma/sass/utilities/_all.sass";
-.hr{
-    border-bottom: solid 1px $grey-lighter;
-}
-
 @import "../../node_modules/bulma/bulma.sass";
