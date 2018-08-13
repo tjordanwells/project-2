@@ -7,7 +7,7 @@ module.exports = function(app) {
         UserId: req.params.userid
       }
     }).then(function(dbSpent) {
-      res.send(dbSpent);
+      res.json(dbSpent);
     });
   });
 
@@ -16,7 +16,7 @@ module.exports = function(app) {
       res.json(dbSpent);
     });
   });
-  app.delete("api/spent/:id", function(req, res) {
+  app.delete("/api/spent/:id", function(req, res) {
     db.Spent.destroy({
       where: {
         id: req.params.id
@@ -26,7 +26,7 @@ module.exports = function(app) {
     });
   });
 
-  app.put("api/spent", function(req, res) {
+  app.put("/api/spent", function(req, res) {
     db.Spent.update(req.body, {
       where: {
         id: req.body.id
