@@ -40,11 +40,17 @@ module.exports = function(app) {
   });
 
   app.put("/api/category", function(req, res) {
-    db.Category.update(req.body, {
-      where: {
-        id: req.body.id
+    db.Category.update(
+      {
+        category: req.body.category,
+        UserId: req.body.UserId
+      },
+      {
+        where: {
+          id: req.body.id
+        }
       }
-    })
+    )
       .then(function(dbCategory) {
         res.json(dbCategory);
       })
