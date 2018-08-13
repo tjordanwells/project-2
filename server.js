@@ -27,6 +27,7 @@ require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 require("./routes/spentRoutes")(app);
 require("./routes/userRoutes")(app);
+require("./routes/plannedRoutes")(app);
 
 var syncOptions = { force: true };
 
