@@ -28,6 +28,7 @@ require("./routes/htmlRoutes")(app);
 require("./routes/spentRoutes")(app);
 require("./routes/userRoutes")(app);
 require("./routes/categoryRoutes")(app);
+require("./routes/subCategoryRoutes")(app);
 
 var syncOptions = { force: false };
 
