@@ -1,7 +1,26 @@
 <form id="signin" name="signin" method="post" action="/user/planned">
-    <label for="email">Email Address</label>
-    <input class="text" name="email" type="text" />
-    <label for="password">Password</label>
-    <input name="password" type="password" />
-    <input class="btn" type="submit" value="Sign In" />
+<!--user email-->
+    <div class="field">
+        <label class="label" for="email">Email</label>
+        <div class="control">
+        <input type="text" class="input" name="email" placeholder="your.email@mail.com">
+        </div>
+    </div>
+
+<!--User password-->
+    <div class="field">
+        <label class="label" for="password">Password</label>
+        <div class="control">
+        <input type="password" class="input"  placeholder="Enter your password">
+        </div>
+    </div>
+    
+<!--Submit/cancel-->
+    <div class="field">
+        <div class="control">
+            <input type="submit" class="button is-success" id="submit" value="Sign In">
+            <button class="button is-danger" id="cancel">Cancel</button>
+        </div>
+    </div>
 </form>
+

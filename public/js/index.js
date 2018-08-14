@@ -8,15 +8,35 @@ $("#login").on("click", function() {
 
   $("#forms").empty();
 
-  var emailInput = textInput("Email", "userEmail", "your.email@mail.com");
-  $("#forms").append(emailInput);
+  var form = $("<form>")
+    .attr("id", "signin")
+    .attr("name", "signin")
+    .attr("method", "post")
+    .attr("action", "/user/planned"); 
 
-  var passwordInput = textInput(
+  var emailInput = input(
+    "Email",
+    "userEmail",
+    "email",
+    "email",
+    "your.email@mail.com"
+  );
+
+  var passwordInput = input(
     "Password",
     "userPassword",
+    "password",
+    "password",
     "Enter your password"
   );
-  $("#forms").append(passwordInput);
+
+  var submit = submitBtn("Sign In", "signupSubmit");
+
+  form
+    .append(emailInput)
+    .append(passwordInput)
+    .append(submit);
+  $("#forms").append(form);
 });
 
 $("#signup").on("click", function() {
@@ -24,27 +44,47 @@ $("#signup").on("click", function() {
   $("#signup").addClass("is-info is-active");
 
   $("#forms").empty();
-  var name = textInput("Name", "username", "John Smith");
-  $("#forms").append(name);
 
-  var emailInput = textInput("Email", "userEmail", "your.email@mail.com");
-  $("#forms").append(emailInput);
+  var form = $("<form>")
+    .attr("id", "signup")
+    .attr("name", "signup")
+    .attr("method", "post")
+    .attr("action", "/");
 
-  var passwordInput = textInput(
+  var name = input(
+    "Name", 
+    "username", 
+    "name", 
+    "text", 
+    "John Smith"
+  );
+
+  form.append(name);
+
+  var emailInput = input(
+    "Email",
+    "userEmail",
+    "email",
+    "email",
+    "your.email@mail.com"
+  );
+
+  form.append(emailInput);
+
+  var passwordInput = input(
     "Password",
     "userPassword",
+    "password",
+    "password",
     "Enter your password"
   );
-  $("#forms").append(passwordInput);
+  form.append(passwordInput);
 
-  var confirmPasswordInput = textInput(
-    "Re-Enter Password",
-    "confirmPassword",
-    "Confirm password"
-  );
-  $("#forms").append(confirmPasswordInput);
+  var submit = submitBtn("Sign Up", "signupSubmit");
 
-  $("#submit").text("Sign up!");
+  form.append(submit);
+
+  $("#forms").append(form);
 });
 
 $("#close").on("click", function() {
@@ -56,7 +96,7 @@ $("#cancel").on("click", function() {
 });
 
 // Creates a label and text input
-function textInput(labelText, id, placeholder) {
+function input(labelText, id, name, type, placeholder) {
   var field = $("<div>").addClass("field");
   var label = $("<label>")
     .addClass("label")
@@ -66,8 +106,9 @@ function textInput(labelText, id, placeholder) {
 
   var input = $("<input>")
     .addClass("input")
-    .attr("type", "text")
+    .attr("type", type)
     .attr("id", id)
+    .attr("name", name)
     .attr("placeholder", placeholder);
 
   control.append(input);
@@ -75,3 +116,27 @@ function textInput(labelText, id, placeholder) {
   field.append(control);
   return field;
 }
+
+function submitBtn(btnText, id) {
+  var field = $("<div>").addClass("field is-grouped");
+
+  var control1 = $("<div>").addClass("control");
+  var control2 = $("<div>").addClass("control");
+
+  var input = $("<input>")
+    .addClass("button is-success")
+    .attr("type", "submit")
+    .attr("id", id)
+    .attr("value", btnText);
+
+  var close = $("<button>")
+    .addClass("button is-danger")
+    .attr("id", "canel")
+    .text("Cancel");
+
+  control1.append(input);
+  control2.append(close);
+  field.append(control1).append(control2);
+  return field;
+}
+
