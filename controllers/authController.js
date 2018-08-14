@@ -1,14 +1,14 @@
 var exports = module.exports = {}
-exports.signup = function(req, res) {
-  res.render("signup");
+// exports.login = function(req, res) {
+//   res.render("/");
+// };
+
+exports.login = function(req, res) {
+  res.render("/");
 };
 
-exports.signin = function(req, res) {
-  res.render("signin");
-};
-
-exports.dashboard = function(req, res) {
-  res.render("dashboard");
+exports.user = function(req, res) {
+  res.render("/user/planned");
 };
 
 exports.logout = function(req, res) {
