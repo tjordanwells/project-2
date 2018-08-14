@@ -80,7 +80,7 @@ $("#signup").on("click", function() {
   );
   form.append(passwordInput);
 
-  var submit = submitBtn("Sign Up", "signupSubmit");
+  var submit = submitBtn("Sign Up", "signinSubmit");
 
   form.append(submit);
 
