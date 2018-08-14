@@ -2,38 +2,22 @@
 <tbody class="entries hidden p-sm-bottom tbody-corrections">
     
     <tr>
-        <td colspan="3">
+        <td colspan="4">
             <div class="flex-center">
-                <div class="field has-addons p-sm">
-                    <div class="control entry-width">
-                        <input type="text" class="input is-primary" id="newEntry{{category}}" placeholder="New entry">
-                    </div>
-                    <div class="control amount-width">
-                        <input type="text" class="input is-primary" id="newAmount{{category}}" placeholder="Amount">
-                    </div>
-                    <div class="control">
-                        <span class="select is-primary">
-                            <select id="category{{category}}" disabled>
-                                <option value="{{category}}">{{category}}</option>
-                            </select>
-                        </span>
-                    </div>
-                    <div class="control">
-                        <button class="button is-primary" id="add{{category}}">Add</button>
-                    </div>
-                </div>
+                {{> input}}
             </div>
         </td>
     </tr>
+    
     
 
     {{#each entries}}
         <tr>
             <td>
-                <h3 class="entry m-xlg-left" id="entry-{{name}}">{{name}}</h3>
+                <h3 class="entry m-xlg-left is-size-7-mobile" id="entry-{{name}}">{{name}}</h3>
             </td>
             <td>
-                <span class="amount m-sm-left" id="amount-{{name}}">{{amount}}</span>        
+                <span class="amount m-sm-left is-size-7-mobile" id="amount-{{name}}">{{amount}}</span>        
             </td>
             <td>
                 <div class="dropdown">
@@ -43,13 +27,13 @@
                     <div class="dropdown-menu" id="{{name}}-menu" role="menu">
                         <div class="dropdown-content p-sm">
                             <button class="button is-info is-fullwidth m-xsm-bottom" id="{{name}}-edit">Edit</button>
-                            <button class="button is-info is-fullwidth m-xsm-bottom" id="{{name}}-move">Move</button>
+                            <button class="button is-warning has-text-white is-fullwidth m-xsm-bottom" id="{{name}}-move">Move</button>
                             <button class="button is-danger is-fullwidth" id="{{name}}-delete">Delete</button>
                         </div>
                     </div>
                 </div>
-                
             </td>
+            <td></td>
         </tr>
     {{/each}}
 
