@@ -27,11 +27,21 @@ module.exports = function(app) {
   });
 
   app.put("/api/plan", function(req, res) {
-    db.Plan.update(req.body, {
-      where: {
-        id: req.body.id
+    db.Plan.update(
+      {
+        entry: req.body.entry,
+        amount: req.body.amount,
+        effectiveDate: req.body.effectiveDate,
+        CategoryId: req.body.CategoryId,
+        UserId: req.body.UserId,
+        subCategoryId: req.body.subCategoryId
+      },
+      {
+        where: {
+          id: req.body.id
+        }
       }
-    }).then(function(dbPlan) {
+    ).then(function(dbPlan) {
       res.json(dbPlan);
     });
   });
