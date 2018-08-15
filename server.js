@@ -27,6 +27,7 @@ require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 require("./routes/spentRoutes")(app);
 require("./routes/userRoutes")(app);
+require("./routes/plannedRoutes")(app);
 require("./routes/categoryRoutes")(app);
 require("./routes/subCategoryRoutes")(app);
 
@@ -37,7 +38,6 @@ var syncOptions = { force: false };
 if (process.env.NODE_ENV === "test") {
   syncOptions.force = true;
 }
-
 
 // Starting the server, syncing our models ------------------------------------/
 db.sequelize.sync(syncOptions).then(function() {
