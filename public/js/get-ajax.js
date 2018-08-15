@@ -14,7 +14,7 @@ $(document).ready(function() {
     };
 
     $.post("/signin", currentUser).then(function(data) {
-      // console.log(data);
+      console.log(data);
     });
   });
 });

@@ -5,7 +5,7 @@ module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
     db.User.findAll({}).then(function(dbUsers) {
-      console.log(dbUsers);
+      // console.log(dbUsers);
       res.render("index");
     });
   });
