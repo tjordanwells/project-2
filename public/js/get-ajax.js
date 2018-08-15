@@ -13,8 +13,8 @@ $(document).ready(function() {
         .trim()
     };
 
-    $.get("/api/users", currentUser).then(function(data) {
-      console.log(data);
+    $.post("/signin", currentUser).then(function(data) {
+      // console.log(data);
     });
   });
 });
