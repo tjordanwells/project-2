@@ -12,4 +12,15 @@ module.exports = function(app) {
       res.json(dbUser);
     });
   });
+
+  app.get("/api/users", function(req, res) {
+    db.User.findOne({
+      where: {
+        email: req.body.email,
+        password: req.body.password
+      }
+    }).then(function(dbUser) {
+      res.json(dbUser);
+    });
+  });
 };

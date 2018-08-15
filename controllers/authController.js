@@ -1,10 +1,10 @@
-var exports = module.exports = {}
+// var exports = module.exports = {}
 // exports.login = function(req, res) {
 //   res.render("/");
 // };
 
 exports.login = function(req, res) {
-  res.render("/");
+  res.render("/user/planned");
 };
 
 exports.user = function(req, res) {

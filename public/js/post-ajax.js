@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $("#signup").on("click", function(event) {
+  $("#signinSubmit").on("click", function(event) {
     event.preventDefault();
     var newUser = {
       email: $("#userEmail")
