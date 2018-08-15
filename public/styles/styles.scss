@@ -15,17 +15,25 @@ $info: $third-color;
 $warning: $fourth-color;
 $danger: $fifth-color;
 
+
 $link: $third-color;
 
 
 $box-shadow: 0 2px 3px rgba(black, 0.1), 0 0 0 1px rgba(black, 0.1);
 $footer-background-color: none;
+$body-background-color: none;
 
 $xsmall: 0.5rem;
 $small: 1.5rem;
 $medium: 3rem;
 $large: 5rem;
 $xlarge: 6.5rem;
+
+$small-mobile: 0.5rem;
+$medium-mobile: 1.5rem;
+$large-mobile: 2rem;
+$xlarge-mobile: 4rem;
+
 
 .shadow {
     box-shadow: $box-shadow;
@@ -40,15 +48,23 @@ body {
     background-color: $background-color;
   }
   
+#hero1 {
+    background-image: url("../img/buy-cash-coins-9660.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    background-position-x: right;
+    background-position-y: bottom;
+}
 
-  
-  .nav-margin {
-    margin-bottom: 100px;
-  }
-  
-  .carat-margin {
-    margin-bottom: 1.5rem;
-  }
+.second-background-color {
+    background-color: $second-color;
+}
+
+
+.carat-margin {
+margin-bottom: 1.5rem;
+}
 
 /**Padding styles**/
 .p-sm {
@@ -133,6 +149,7 @@ body {
 }
 
 .flex-column { 
+    display: flex;
     flex-direction: column;
 }
 
@@ -145,10 +162,6 @@ body {
 
 .tbody-corrections {
     margin-top: 20px;
-}
-
-tr > th:nth-child(1) {
-    width: 50%;
 }
 
 /**new entry inputs**/
@@ -168,6 +181,61 @@ tr > th:nth-child(1) {
         width: 175px;
     }
     width: 175px;
+}
+
+@media only screen and (min-width: 600px) {
+    tr > th:nth-child(1) {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .pm-sm {
+        padding: $small-mobile;
+    }
+
+    .p-sm-right{
+        padding-right: $small-mobile;
+    }
+
+    .p-sm-left {
+        padding-left: $small-mobile;
+    }
+
+    .m-lg-left{
+        margin-left: $large-mobile;
+    }
+
+    .m-lg-bottom {
+        margin-bottom: $large-mobile;
+    }
+
+    .m-sm-top {
+        margin-top: $small-mobile;
+    }
+
+    .entry-width {
+        width: 100%;
+    }
+    
+    .amount-width {
+        width: 100%;
+    }
+    
+    .select-width {
+        > span {
+            > select{
+                width: 100%;
+            }
+            width: 100%;
+        }
+        width: 100%;
+    }
+
+    tr > th:nth-child(1) {
+        width: 35%;
+    }
+    
 }
 
 

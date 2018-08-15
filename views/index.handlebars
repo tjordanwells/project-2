@@ -1,18 +1,48 @@
 {{> nav}}
 
-<div class="hero is-medium is-primary is-bold">
-  <div class="hero-body">
-    <div class="container">
-      <h1 class="title">
-        KB Kind Budget
-      </h1>
-      <h2 class="subtitle">
-        The easy way to budget
-      </h2>
-      <button class="button is-danger" id="userAuth">Login or Sign Up</button>
+<section id="main-content" class="container">
+  <div class="hero is-medium is-bold" id="hero1">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+          KB Kind Budget
+        </h1>
+        <h2 class="subtitle">
+          The easy way to budget
+        </h2>
+        <button class="button is-danger" id="userAuth">Login or Sign Up</button>
+      </div>
     </div>
   </div>
-</div>
+
+  <div class="hero has-background-white" id="hero2">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title p-sm">Budgeting the way it should be... simple</h1>
+
+        <div class="level">
+          <div class="level-item flex-column">
+            <img class="image is-128x128" src="/img/money-bag.png" alt="money">
+            <p class="has-text-weight-bold p-sm">Track your income</p>
+          </div>
+          <div class="level-item flex-column">
+            <img class="image is-128x128" src="/img/loss.png" alt="chart">
+            <p class="has-text-weight-bold p-sm">See how your money is spent</p>
+          </div>
+          <div class="level-item flex-column">
+            <img class="image is-128x128" src="/img/abacus.png" alt="calc">
+            <p class="has-text-weight-bold p-sm">Calculate your budget</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>  </div>
+</footer>
 
 <!--Login Modal-->
 <div class="modal">
@@ -40,35 +70,16 @@
           </p>
         </div>
       </div>
+
       <!--Forms-->
-
       <div id="forms">
-        
-        <!--user email-->
-        <div class="field">
-          <label class="label">Email</label>
-          <div class="control">
-            <input type="text" class="input" id="userEmail" placeholder="your.email@mail.com">
-          </div>
-        </div>
+        {{> signin}}
+      </div>  
 
-        <!--User password-->
-        <div class="field">
-          <label class="label">Password</label>
-          <div class="control">
-            <input type="text" class="input" id="userPassword" placeholder="Enter your password">
-          </div>
-        </div>  
-      </div>
+    </section>
 
-      </section>
+    <footer class="modal-card-foot"></footer>
 
-      <!--submit buttons-->
-      <footer class="modal-card-foot">
-        <button class="button is-success" id="submit">login</button>
-        <button class="button is-danger" id="cancel">Cancel</button>
-      </footer>
-    
     </div>
       <button class="modal-close is-large" id="close" aria-label="close"></button>
   </div>
