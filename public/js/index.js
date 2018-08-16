@@ -12,7 +12,7 @@ $("#login").on("click", function() {
     .attr("id", "signin")
     .attr("name", "signin")
     .attr("method", "post")
-    .attr("action", "/signin");
+    .attr("action", "/user/planned"); 
 
   var emailInput = input(
     "Email",
@@ -49,9 +49,15 @@ $("#signup").on("click", function() {
     .attr("id", "signup")
     .attr("name", "signup")
     .attr("method", "post")
-    .attr("action", "/signup");
+    .attr("action", "/");
 
-  var name = input("Name", "username", "name", "text", "John Smith");
+  var name = input(
+    "Name", 
+    "username", 
+    "name", 
+    "text", 
+    "John Smith"
+  );
 
   form.append(name);
 

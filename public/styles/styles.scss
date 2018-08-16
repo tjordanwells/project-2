@@ -35,6 +35,17 @@ $large-mobile: 2rem;
 $xlarge-mobile: 4rem;
 
 
+.dropdown-menu {
+    left: auto !important;
+    right: 0px !important;
+}
+
+.saveBtn {
+    z-index: 1;
+    margin-bottom: -25px;
+}
+
+
 .shadow {
     box-shadow: $box-shadow;
 }
@@ -104,6 +115,10 @@ margin-bottom: 1.5rem;
     margin: $small;
 }
 
+.m-md {
+    margin: $medium;
+}
+
 .m-xsm-bottom {
     margin-bottom: $xsmall;
 }
@@ -141,10 +156,10 @@ margin-bottom: 1.5rem;
 
 /**entries table styling**/
 .flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    align-content: center !important;
     
 }
 
@@ -241,5 +256,4 @@ margin-bottom: 1.5rem;
 
 
 
-@import "../../node_modules/bulma/sass/utilities/_all.sass";
 @import "../../node_modules/bulma/bulma.sass";
