@@ -1,6 +1,14 @@
 var db = require("../models");
 var dummy = require("../dummydata");
 
+function isLoggedIn(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
+  }
+
+  res.redirect("/");
+}
+
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
@@ -9,15 +17,45 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/user/planned", function(req, res) {
-    res.render("user", {
-      usernav: true,
-      section: {
-        planned: true,
-        spent: false,
-        remaining: false
-      },
-      userData: dummy.budget.planned
+  app.get("/user/planned", isLoggedIn, function(req, res) {
+    console.log(req.user);
+
+    var planQuery = db.Plan.findAll({
+      where: {
+        userid: req.user.id
+      }
+    });
+    var catQuery = db.Category.findAll({
+      where: {
+        userid: req.user.id
+      }
+    });
+
+    Promise.all([planQuery, catQuery]).then(function(result) {
+      result[0]; // plans
+      result[1]; // categories.
+
+      var planned = [];
+      result[0].forEach(function(val) {
+        console.log(val.dataValues);
+        planned.push(val.dataValues);
+      });
+
+      var category = [];
+      result[1].forEach(function(val) {
+        console.log(val.dataValues);
+        category.push(val.dataValues);
+      });
+      res.render("user", {
+        usernav: true,
+        section: {
+          planned: true,
+          spent: false,
+          remaining: false
+        },
+        planData: planned,
+        categoryData: category
+      });
     });
   });
 
