@@ -12,7 +12,7 @@ $("#login").on("click", function() {
     .attr("id", "signin")
     .attr("name", "signin")
     .attr("method", "post")
-    .attr("action", "/user/planned"); 
+    .attr("action", "/signin"); 
 
   var emailInput = input(
     "Email",

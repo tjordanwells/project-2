@@ -23,8 +23,11 @@ $link: $grey;
 
 $family-sans-serif: "Catamaran";
 
+$transparent-white: rgba(255,255,255,0.75);
 
-
+.transparent-white-background{
+    background-color: $transparent-white !important;
+}
 
 $box-shadow: 0 2px 3px rgba(black, 0.1), 0 0 0 1px rgba(black, 0.1);
 $footer-background-color: none;
@@ -66,6 +69,9 @@ body {
     background-color: $background-color;
   }
   
+.textbox {
+    width: 15rem;
+}
 #hero1 {
     background-image: url("../img/buy-cash-coins-9660.jpg");
     background-size: contain;

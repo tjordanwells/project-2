@@ -2,6 +2,9 @@
 @import url("https://fonts.googleapis.com/css?family=ABeeZee");
 @import url("https://fonts.googleapis.com/css?family=Catamaran|Merriweather+Sans");
 /**theme colors**/
+.transparent-white-background {
+  background-color: rgba(255, 255, 255, 0.75) !important; }
+
 .dropdown-menu {
   left: auto !important;
   right: 0px !important; }
@@ -19,6 +22,9 @@ html {
 
 body {
   background-color: #a2a8a8; }
+
+.textbox {
+  width: 15rem; }
 
 #hero1 {
   background-image: url("../img/buy-cash-coins-9660.jpg");
