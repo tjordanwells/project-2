@@ -35,11 +35,9 @@ app.set("view engine", "handlebars");
 
 // Routes
 require("./routes/indexRoutes")(app);
-require("./routes/spentRoutes")(app);
 require("./routes/userRoutes")(app);
 require("./routes/auth.js")(app, passport);
 require("./config/passport/passport.js")(passport, db.User);
-require("./routes/plannedRoutes")(app);
 require("./routes/categoryRoutes")(app);
 require("./routes/subCategoryRoutes")(app);
 
