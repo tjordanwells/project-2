@@ -32,6 +32,8 @@ module.exports = function(app, passport) {
     })
   );
 
+  app.post("/user/planned", isLoggedIn, plannedRoutes.postUserPlanned);
+
   function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {
       return next();
