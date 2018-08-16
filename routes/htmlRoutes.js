@@ -16,7 +16,7 @@ module.exports = function(app) {
       res.render("index");
     });
   });
-
+  // Load the user/planned page with categories and data
   app.get("/user/planned", isLoggedIn, function(req, res) {
     console.log(req.user);
 
@@ -58,20 +58,47 @@ module.exports = function(app) {
       });
     });
   });
+  // Load the user/spent page with categories and data
+  app.get("/user/spent", isLoggedIn, function(req, res) {
+    var spentQuery = db.Spent.findAll({
+      where: {
+        userid: req.user.id
+      }
+    });
+    var catQuery = db.Category.findAll({
+      where: {
+        userid: req.user.id
+      }
+    });
 
-  app.get("/user/spent", function(req, res) {
-    res.render("user", {
-      usernav: true,
-      section: {
-        planned: false,
-        spent: true,
-        remaining: false
-      },
-      userData: dummy.budget.spent
+    Promise.all([spentQuery, catQuery]).then(function(result) {
+      result[0]; // spent
+      result[1]; // categories.
+
+      var spent = [];
+      result[0].forEach(function(val) {
+        console.log(val.dataValues);
+        spent.push(val.dataValues);
+      });
+
+      var category = [];
+      result[1].forEach(function(val) {
+        console.log(val.dataValues);
+        category.push(val.dataValues);
+      });
+      res.render("user", {
+        usernav: true,
+        section: {
+          planned: false,
+          spent: true,
+          remaining: false
+        },
+        spentData: spent,
+        categoryData: category
+      });
     });
   });
-
-  app.get("/user/remaining", function(req, res) {
+  app.get("/user/remaining", isLoggedIn, function(req, res) {
     res.render("user", {
       usernav: true,
       section: {
