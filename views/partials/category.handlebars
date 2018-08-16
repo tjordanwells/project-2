@@ -1,11 +1,18 @@
 <thead>
     <tr>
         <th>
-            <h3 class="subtitle has-text-weight-bold m-lg-left is-size-6-mobile category" data-cat={{category}}>{{category}}</h3>
+            <div id="catText">
+                <h3 class="subtitle has-text-weight-bold m-lg-left is-size-6-mobile category" data-cat={{category}}>{{category}}</h3>
+            </div>
+            <div id="catInput">
+                <input type="text" name="editCatName" id="editCatName" value={{cateogry}}>
+            </div>
         </th>
         <th>
-            <span class="is-size-6 is-size-7-mobile">Total: </span>
-            <span class="subtitle is-size-7-mobile has-text-success">{{total}}</span>
+            <div id="catAmountText">
+                <span class="is-size-6 is-size-7-mobile">Total: </span>
+                <span class="subtitle is-size-7-mobile has-text-success">{{total}}</span>
+            </div>
         </th>
         <th>
             <span class="icon is-medium"><i class="fas fa-caret-up fa-2x caret-margin" data-category={{category}}></i></span>

@@ -30,7 +30,7 @@ $("#login").on("click", function() {
     "Enter your password"
   );
 
-  var submit = submitBtn("Sign In", "signupSubmit");
+  var submit = submitBtn("Sign In", "signinSubmit");
 
   form
     .append(emailInput)
@@ -80,7 +80,7 @@ $("#signup").on("click", function() {
   );
   form.append(passwordInput);
 
-  var submit = submitBtn("Sign Up", "signinSubmit");
+  var submit = submitBtn("Sign Up", "signupSubmit");
 
   form.append(submit);
 

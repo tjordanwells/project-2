@@ -1,4 +1,7 @@
 @charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=PT+Sans|PT+Sans+Narrow');
+@import url('https://fonts.googleapis.com/css?family=ABeeZee');
+@import url('https://fonts.googleapis.com/css?family=Catamaran|Merriweather+Sans');
 
 
 /**theme colors**/
@@ -14,9 +17,13 @@ $success: $second-color;
 $info: $third-color;
 $warning: $fourth-color;
 $danger: $fifth-color;
+$grey: hsl(0, 0%, 48%);
+
+$link: $grey;
+
+$family-sans-serif: "Catamaran";
 
 
-$link: $third-color;
 
 
 $box-shadow: 0 2px 3px rgba(black, 0.1), 0 0 0 1px rgba(black, 0.1);
@@ -77,6 +84,19 @@ body {
 margin-bottom: 1.5rem;
 }
 
+.nav-correction {
+    display: flex !important;
+    align-items: stretch !important;
+}
+
+.nav-correction > .navbar-start {
+    justify-content: flex-start !important;
+}
+
+.nav-correction > .navbar-end {
+    justify-content: flex-end !important;
+}
+
 /**Padding styles**/
 .p-sm {
     padding: $small;
@@ -129,6 +149,10 @@ margin-bottom: 1.5rem;
 
 .m-sm-left {
     margin-left: $small;
+}
+
+.m-xsm-right {
+    margin-right: $xsmall;
 }
 
 .m-lg-left {
