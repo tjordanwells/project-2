@@ -68,5 +68,6 @@ exports.deleteUserSpent = function(req, res) {
     }
   }).then(function(dbSpent) {
     console.log(dbSpent);
+    console.log(res);
   });
 };
