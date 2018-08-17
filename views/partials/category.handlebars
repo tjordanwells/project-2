@@ -2,30 +2,35 @@
     <tr>
         <th>
             <div id="catText">
-                <h3 class="subtitle has-text-weight-bold m-lg-left is-size-6-mobile category" data-cat={{category}}>{{category}}</h3>
+                <h3 class="subtitle has-text-weight-bold m-lg-left is-size-6-mobile category" data-category={{id}}>{{category}}</h3>
             </div>
-            <div id="catInput">
-                <input type="text" name="editCatName" id="editCatName" value={{cateogry}}>
+            <div id="catInput-{{id}}" class="hidden">
+                <input type="text" class="input" name="editCatName" value={{cateogry}}>
             </div>
         </th>
         <th>
             <div id="catAmountText">
                 <span class="is-size-6 is-size-7-mobile">Total: </span>
-                <span class="subtitle is-size-7-mobile has-text-success">{{total}}</span>
+                <span class="subtitle is-size-7-mobile has-text-success">$Amount</span>
             </div>
         </th>
         <th>
-            <span class="icon is-medium"><i class="fas fa-caret-up fa-2x caret-margin" data-category={{category}}></i></span>
+            <span class="icon is-medium"><i class="fas fa-caret-up fa-2x caret-margin" data-category={{id}}></i></span>
         </th>
         <th>
+            <div class="saveBtn hidden">
+                <button class="button is-primary" data-section={{section}}>
+                    <i class='far fa-save'S></i>
+                </button>
+            </div>
             <div class="dropdown is-pulled-right">
                     <div class="dropdown-trigger">
-                        <span aria-haspopup="true" aria-controls="{{category}}-menu"><i class="icon fas fa-ellipsis-h"></i></span>
+                        <span aria-haspopup="true" aria-controls="cat-{{id}}_menu"><i class="icon fas fa-ellipsis-h"></i></span>
                     </div>
-                    <div class="dropdown-menu" id="{{category}}-menu" role="menu">
+                    <div class="dropdown-menu" id="cat-{{id}}_menu" role="menu">
                         <div class="dropdown-content p-sm">
-                            <button class="button is-info is-fullwidth m-xsm-bottom" id="{{category}}-edit">Edit</button>
-                            <button class="button is-danger is-fullwidth" id="{{category}}-delete">Delete</button>
+                            <button class="button is-info is-fullwidth m-xsm-bottom" data-cateogry={{id}} data-section={{section}} data-action="edit" id="cat-{{id}}_edit">Edit</button>
+                            <button class="button is-danger is-fullwidth" data-category={{id}} data-section={{section}} data-action="delete" id="cat-{{id}}_delete">Delete</button>
                         </div>
                     </div>
                 </div>

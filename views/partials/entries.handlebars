@@ -1,24 +1,10 @@
-
-<tbody class="entries hidden p-sm-bottom tbody-corrections">
-    
-    <tr>
-        <td colspan="4">
-            <div class="flex-center">
-                {{> input}}
-            </div>
-        </td>
-    </tr>
-    
-    
-
-    {{#each entries}}
-        <tr id={{id}}>
+        <tr id="entry-{{id}}" data-category={{CategoryId}}>
             <td>
                 <div class="entryText">
-                    <h3 class="entry m-xlg-left is-size-7-mobile" id="entry-{{id}}">{{name}}</h3>
+                    <h3 class="entry m-xlg-left is-size-7-mobile" data-entry="{{id}}">{{entry}}</h3>
                 </div>
                 <div class="entryInput hidden">
-                    <input type="text" class="input" name="editEntry" id="editEntry-{{id}}" value={{name}}>
+                    <input type="text" class="input" name="editEntry" id="editEntry-{{id}}" value={{entry}}>
                 </div>
                 
             </td>
@@ -32,7 +18,7 @@
             </td>
             <td>
                 <div class="saveBtn hidden">
-                    <button class="button is-primary">
+                    <button class="button is-primary" data-section={{section}}>
                         <i class='far fa-save'S></i>
                     </button>
                 </div>
@@ -42,9 +28,9 @@
                     </div>
                     <div class="dropdown-menu" id="{{id}}-menu" role="menu">
                         <div class="dropdown-content p-sm">
-                            <button class="button is-info is-fullwidth m-xsm-bottom" data-action="edit" id="{{id}}_edit">Edit</button>
-                            <button class="button is-warning has-text-white is-fullwidth m-xsm-bottom" data-action="move"id="{{id}}_move">Move</button>
-                            <button class="button is-danger is-fullwidth" id="{{id}}_delete" data-action="delete">Delete</button>
+                            <button class="button is-info is-fullwidth m-xsm-bottom" data-section={{section}} data-action="edit" id="{{id}}_edit">Edit</button>
+                            <button class="button is-warning has-text-white is-fullwidth m-xsm-bottom" data-section={{section}} data-action="move" id="{{id}}_move">Move</button>
+                            <button class="button is-danger is-fullwidth" id="{{id}}_delete" data-action="delete" data-section={{section}}>Delete</button>
                         </div>
                     </div>
                 </div>
@@ -52,8 +38,6 @@
             </td>
             <td></td>
         </tr>
-    {{/each}}
-</tbody>
 
 
 

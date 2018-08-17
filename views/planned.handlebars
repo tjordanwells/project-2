@@ -1,0 +1,64 @@
+{{> nav}}
+
+<div class="container has-background-white shadow p-md" id="budget">
+            <a href="/user/planned">
+                <span class="tab title is-1 is-size-5-mobile p-sm-left p-sm-right has-text-grey-lighter" id="planned">Planned</span>
+            </a>
+            <a href="/user/spent">
+                <span class="tab title is-1 is-size-5-mobile p-sm-right" id="spent">Spent</span>
+            </a>
+            <a href="/user/remaining">            
+                <span class="tab title is-1 is-size-5-mobile" id="remaining">Remaining</span>
+            </a>
+
+    <br>
+
+    <div class="input-div flex-center p-md">
+        {{> input}}
+    </div>
+
+    <div class="flex-center flex-column">
+        {{#each categoryData}}
+            <table class="table is-fullwidth is-striped" id="cat-{{id}}">
+                {{> category}} 
+
+                <tbody class="entries hidden p-sm-bottom tbody-corrections">
+                    <tr>
+                        <td colspan="4">
+                            <div class="flex-center">
+                                {{> input}}
+                            </div>
+                        </td>
+                    </tr>
+                    {{#each entries}}
+                        {{> entries}}
+                    {{/each}}
+                </tbody>
+            </table>
+        {{/each}}
+    </div>
+
+</div>
+
+<div class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title"></p>
+      <button class="delete" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body flex-center flex-column">
+      <!-- Content ... -->
+    </section>
+    <footer class="modal-card-foot flex-center">
+        <button class="button is-success">Save changes</button>
+        <button class="button is-danger" aria-label="close">Cancel</button>
+    </footer>
+  </div>
+</div>
+
+{{> footer}}
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="/js/user.js"></script>
+<script type="text/javascript" src="/js/entries.js"></script>
