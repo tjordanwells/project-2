@@ -21,7 +21,7 @@ $(".button[aria-label='close']").on("click", function() {
 
 //toggles the entries for all categories
 $(".caret-margin").on("click", function() {
-  var id = "#" + $(this).attr("data-category");
+  var id = "#cat-" + $(this).attr("data-category");
   var isHidden = $(id + "> .entries").hasClass("hidden");
   if (isHidden) {
     $(id)
@@ -59,6 +59,8 @@ var dropdownContentListener = function() {
     var id = $(this)
       .attr("id")
       .split("_")[0];
+      console.log(id);
+    id = "entry-" + id;
 
     $(".dropdown").removeClass("is-active");
 
@@ -82,23 +84,23 @@ var saveListener = function(id) {
   });
 };
 
-$(".add").on("click", function() {
-  var action = $(this)
-    .attr("id")
-    .split("-");
-  var cat = action[1];
-  console.log(action);
-  var newEntry = {
-    name: $("#newEntry" + cat)
-      .val()
-      .trim(),
-    amount: $("#newAmount" + cat)
-      .val()
-      .trim(),
-    category: $("#category" + cat).val()
-  };
-  console.log(newEntry);
-});
+// $(".add").on("click", function() {
+//   var action = $(this)
+//     .attr("id")
+//     .split("-");
+//   var cat = action[1];
+//   console.log(action);
+//   var newEntry = {
+//     name: $("#newEntry" + cat)
+//       .val()
+//       .trim(),
+//     amount: $("#newAmount" + cat)
+//       .val()
+//       .trim(),
+//     category: $("#category" + cat).val()
+//   };
+//   console.log(newEntry);
+// });
 
 $("#addEntry").on("click", function() {
   var newEntry = {
@@ -164,7 +166,7 @@ var moveModal = function(entryId) {
   $title.html("<p class='modal-card-title'>Move Entry</p>");
 
   var $message = $("<p>").addClass("has-text-weight-bold");
-  $message.text(`Move ${entry} from ${entryCat} to: `);
+  $message.text(`Move \"${entry}\" from \"${entryCat}\" to: `);
 
 
   var $selectDiv = $("<div>").addClass("select m-md");
@@ -172,11 +174,11 @@ var moveModal = function(entryId) {
   var $defaultOpt = $("<option>").text("Select Category");
 
   $select.append($defaultOpt);
-  $(".category[data-cat]").each(function() {
-    var category = $(this).attr("data-cat");
+  $("#catText h3[data-category]").each(function() {
+    var category = $(this).text();
     var option = $("<option>")
       .text(category)
-      .attr("value", category);
+      .attr("value", $(this).attr("data-category"));
     $($select).append(option);
   });
 

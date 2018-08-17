@@ -1,22 +1,42 @@
 <div class="field has-addons p-sm">
     <div class="control has-icons-left entry-width">
-        <input type="text" class="input is-primary" id="newEntry{{category}}" placeholder="New entry">
-        <span class="icon is-small is-left"><i class="fas fa-pencil-alt"></i></span>
+
+        {{#unless categoryData}}
+            <input type="text" class="input is-primary" data-cateogry={{id}} id="newEntry-{{category}}" placeholder="New entry">
+            <span class="icon is-small is-left"><i class="fas fa-pencil-alt"></i></span>
+        {{/unless}}
+
+        {{#if categoryData}}
+            <input type="text" class="input is-primary" data-cateogry="-1" id="newEntry" placeholder="New entry">
+            <span class="icon is-small is-left"><i class="fas fa-pencil-alt"></i></span>
+        {{/if}}
+        
     </div>
+
     <div class="control has-icons-left amount-width">
-        <input type="text" class="input is-primary" id="newAmount{{category}}" placeholder="Amount">
-        <span class="icon is-small is-left"><i class="fas fa-dollar-sign"></i></span>
+        
+        {{#unless categoryData}}
+            <input type="text" class="input is-primary" data-category={{category}} id="newAmount-{{category}}" placeholder="Amount">
+            <span class="icon is-small is-left"><i class="fas fa-dollar-sign"></i></span>
+        {{/unless}}
+
+        {{#if categoryData}}
+            <input type="text" class="input is-primary" data-category="-1" id="newAmount" placeholder="Amount">
+            <span class="icon is-small is-left"><i class="fas fa-dollar-sign"></i></span>
+        {{/if}}
+
+        
     </div>
     <div class="control has-icons-left select-width">
                 <span class="select is-primary">
                     <select name="category" id="topCategory">
-                        {{#unless userData}}
+                        {{#unless categoryData}}
                             <option value="{{category}}" selected disabled>{{category}}</option>
                         {{/unless}}
-                        {{#if userData}}
+                        {{#if categoryData}}
                             <option value="select">Category</option>
-                            {{#each userData}}
-                            <option value="{{category}}">{{category}}</option>
+                            {{#each categoryData}}
+                            <option value="{{id}}">{{category}}</option>
                             {{/each}}
                         {{/if}}
                     </select>
@@ -24,6 +44,11 @@
                 <span class="icon is-small is-left"><i class="fas fa-bars"></i></span>
             </div>
     <div class="control">
-        <button class="button is-primary add" id="add-{{category}}">Add</button>
+        {{#unless categoryData}}
+        <button class="button is-primary add" data-category={{id}} id="add-{{category}}">Add</button>
+        {{/unless}}
+        {{#if categoryData}}
+            <button class="button is-primary add" data-category="-1" id="add">Add</button>
+        {{/if}}
     </div>
 </div>
