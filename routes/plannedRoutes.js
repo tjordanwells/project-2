@@ -50,37 +50,36 @@ exports.getUserPlanned = function(req, res) {
   });
 };
 
-// app.post("/api/plan", function(req, res) {
-//   db.Plan.create(req.body).then(function(dbPlan) {
-//     res.json(dbPlan);
-//   });
-// });
-// app.delete("/api/plan/:id", function(req, res) {
-//   db.Plan.destroy({
-//     where: {
-//       id: req.params.id
-//     }
-//   }).then(function(dbPlan) {
-//     res.json(dbPlan);
-//   });
-// });
+exports.postUserPlanned = function(req, res) {
+  db.Plan.create({
+    entry: req.body.entry,
+    amount: req.body.amount,
+    CategoryId: req.body.category,
+    UserId: req.user.id
+  }).then(function(dbPlan) {
+    res.json(dbPlan);
+  });
+};
 
-// app.put("/api/plan", function(req, res) {
-//   db.Plan.update(
-//     {
-//       entry: req.body.entry,
-//       amount: req.body.amount,
-//       effectiveDate: req.body.effectiveDate,
-//       CategoryId: req.body.CategoryId,
-//       UserId: req.body.UserId,
-//       subCategoryId: req.body.subCategoryId
-//     },
-//     {
-//       where: {
-//         id: req.body.id
-//       }
-//     }
-//   ).then(function(dbPlan) {
-//     res.json(dbPlan);
-//   });
-// });
+exports.putUserPlanned = function(req, res) {
+  db.Spent.update({
+    entry: req.body.entry,
+    amount: req.body.amount,
+    where: {
+      id: req.body.id
+    }
+  }).then(function(dbPlan) {
+    res.json(dbPlan);
+  });
+};
+
+exports.deleteUserPlanned = function(req, res) {
+  db.Spent.destroy({
+    where: {
+      id: req.body.id
+    }
+  }).then(function(dbPlan) {
+    console.log(dbPlan);
+    console.log(res);
+  });
+};
