@@ -1,4 +1,7 @@
 @charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=PT+Sans|PT+Sans+Narrow');
+@import url('https://fonts.googleapis.com/css?family=ABeeZee');
+@import url('https://fonts.googleapis.com/css?family=Catamaran|Merriweather+Sans');
 
 
 /**theme colors**/
@@ -14,10 +17,17 @@ $success: $second-color;
 $info: $third-color;
 $warning: $fourth-color;
 $danger: $fifth-color;
+$grey: hsl(0, 0%, 48%);
 
+$link: $grey;
 
-$link: $third-color;
+$family-sans-serif: "Catamaran";
 
+$transparent-white: rgba(255,255,255,0.75);
+
+.transparent-white-background{
+    background-color: $transparent-white !important;
+}
 
 $box-shadow: 0 2px 3px rgba(black, 0.1), 0 0 0 1px rgba(black, 0.1);
 $footer-background-color: none;
@@ -35,6 +45,17 @@ $large-mobile: 2rem;
 $xlarge-mobile: 4rem;
 
 
+.dropdown-menu {
+    left: auto !important;
+    right: 0px !important;
+}
+
+.saveBtn {
+    z-index: 1;
+    margin-bottom: -25px;
+}
+
+
 .shadow {
     box-shadow: $box-shadow;
 }
@@ -48,6 +69,9 @@ body {
     background-color: $background-color;
   }
   
+.textbox {
+    width: 15rem;
+}
 #hero1 {
     background-image: url("../img/buy-cash-coins-9660.jpg");
     background-size: contain;
@@ -64,6 +88,19 @@ body {
 
 .carat-margin {
 margin-bottom: 1.5rem;
+}
+
+.nav-correction {
+    display: flex !important;
+    align-items: stretch !important;
+}
+
+.nav-correction > .navbar-start {
+    justify-content: flex-start !important;
+}
+
+.nav-correction > .navbar-end {
+    justify-content: flex-end !important;
 }
 
 /**Padding styles**/
@@ -104,6 +141,10 @@ margin-bottom: 1.5rem;
     margin: $small;
 }
 
+.m-md {
+    margin: $medium;
+}
+
 .m-xsm-bottom {
     margin-bottom: $xsmall;
 }
@@ -114,6 +155,10 @@ margin-bottom: 1.5rem;
 
 .m-sm-left {
     margin-left: $small;
+}
+
+.m-xsm-right {
+    margin-right: $xsmall;
 }
 
 .m-lg-left {
@@ -141,10 +186,10 @@ margin-bottom: 1.5rem;
 
 /**entries table styling**/
 .flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    align-content: center !important;
     
 }
 
@@ -241,5 +286,4 @@ margin-bottom: 1.5rem;
 
 
 
-@import "../../node_modules/bulma/sass/utilities/_all.sass";
 @import "../../node_modules/bulma/bulma.sass";
