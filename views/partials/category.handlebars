@@ -4,8 +4,8 @@
             <div id="catText">
                 <h3 class="subtitle has-text-weight-bold m-lg-left is-size-6-mobile category" data-category={{id}}>{{category}}</h3>
             </div>
-            <div id="catInput" class="hidden">
-                <input type="text" class="input" name="editCatName" id="editCatName" value={{cateogry}}>
+            <div id="catInput-{{id}}" class="hidden">
+                <input type="text" class="input" name="editCatName" value={{cateogry}}>
             </div>
         </th>
         <th>
@@ -29,8 +29,8 @@
                     </div>
                     <div class="dropdown-menu" id="cat-{{id}}_menu" role="menu">
                         <div class="dropdown-content p-sm">
-                            <button class="button is-info is-fullwidth m-xsm-bottom" id="cat-{{id}}_edit">Edit</button>
-                            <button class="button is-danger is-fullwidth" id="cat-{{id}}_delete">Delete</button>
+                            <button class="button is-info is-fullwidth m-xsm-bottom" data-cateogry={{id}} data-action="edit" id="cat-{{id}}_edit">Edit</button>
+                            <button class="button is-danger is-fullwidth" data-category={{id}} data-action="delete"id="cat-{{id}}_delete">Delete</button>
                         </div>
                     </div>
                 </div>
