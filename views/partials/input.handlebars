@@ -2,7 +2,7 @@
     <div class="control has-icons-left entry-width">
 
         {{#unless categoryData}}
-            <input type="text" class="input is-primary" data-cateogry={{id}} id="newEntry-{{category}}" placeholder="New entry">
+            <input type="text" class="input is-primary" data-cateogry={{id}} id="newEntry-{{id}}" placeholder="New entry">
             <span class="icon is-small is-left"><i class="fas fa-pencil-alt"></i></span>
         {{/unless}}
 
@@ -16,7 +16,7 @@
     <div class="control has-icons-left amount-width">
         
         {{#unless categoryData}}
-            <input type="text" class="input is-primary" data-category={{category}} id="newAmount-{{category}}" placeholder="Amount">
+            <input type="text" class="input is-primary" data-category={{category}} id="newAmount-{{id}}" placeholder="Amount">
             <span class="icon is-small is-left"><i class="fas fa-dollar-sign"></i></span>
         {{/unless}}
 

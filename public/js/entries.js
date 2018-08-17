@@ -22,8 +22,8 @@ $("#add").on("click", function() {
 });
 
 $(".add").on("click", function() {
+  console.log("I work");
   var cat = $(this).attr("data-category");
-  
   var entry = $("#newEntry-" + cat)
     .val()
     .trim();
@@ -39,4 +39,5 @@ $(".add").on("click", function() {
   }
 
   console.log(newEntry);
+  //POST route goes here
 });
