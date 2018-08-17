@@ -29,7 +29,9 @@ function resize () {
 
     //entry
     $(".entry").removeClass("m-xlg-left");
-  }else {
+    //hero backround
+    $(".hero-body").addClass("transparent-white-background");
+  } else {
     //layout
     $("#budget")
       .addClass("p-md")
@@ -56,6 +58,9 @@ function resize () {
 
     //entry
     $(".entry").addClass("m-xlg-left");
+
+    //hero text background
+    $(".hero-body").removeClass("transparent-white-background");
   }
 }
 

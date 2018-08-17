@@ -4,14 +4,13 @@
   "description": "Project 2",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
+    "start-server": "nodemon server.js",
     "lint": "eslint **/*.js --quiet",
     "fix": "eslint --fix .",
     "test": "npm run lint && NODE_ENV=test mocha -u tdd --reporter spec --exit",
     "css-build": "node-sass --omit-source-map-url public/styles/styles.scss public/styles/sassStyles.css",
-    "css-watch": "npm run css-build -- --watch",
-    "css-start": "npm run css-watch",
-    "start-dev": "concurrently \"npm start\" \"npm run css-start\""
+    "start-dev": "concurrently \"nodemon server.js\" \"npm run css-build\""
   },
   "license": "ISC",
   "dependencies": {
