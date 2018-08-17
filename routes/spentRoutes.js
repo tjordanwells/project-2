@@ -31,11 +31,7 @@ exports.getUserSpent = function(req, res) {
     });
     res.render("spent", {
       usernav: true,
-      section: {
-        planned: false,
-        spent: true,
-        remaining: false
-      },
+      section: "spent",
       spentData: spent,
       categoryData: category
     });
@@ -53,33 +49,24 @@ exports.postUserSpent = function(req, res) {
   });
 };
 
+exports.putUserSpent = function(req, res) {
+  db.Spent.update({
+    entry: req.body.entry,
+    amount: req.body.amount,
+    where: {
+      id: req.body.id
+    }
+  }).then(function(dbSpent) {
+    res.json(dbSpent);
+  });
+};
 
-// app.delete("/api/spent/:id", function(req, res) {
-//   db.Spent.destroy({
-//     where: {
-//       id: req.params.id
-//     }
-//   }).then(function(dbSpent) {
-//     res.json(dbSpent);
-//   });
-// });
-
-// app.put("/api/spent", function(req, res) {
-//   db.Spent.update(
-//     {
-//       entry: req.body.entry,
-//       amount: req.body.amount,
-//       effectiveDate: req.body.effectiveDate,
-//       CategoryId: req.body.CategoryId,
-//       UserId: req.body.UserId,
-//       subCategoryId: req.body.subCategoryId
-//     },
-//     {
-//       where: {
-//         id: req.body.id
-//       }
-//     }
-//   ).then(function(dbSpent) {
-//     res.json(dbSpent);
-//   });
-// });
+exports.deleteUserSpent = function(req, res) {
+  db.Spent.destroy({
+    where: {
+      id: req.body.id
+    }
+  }).then(function(dbSpent) {
+    console.log(dbSpent);
+  });
+};

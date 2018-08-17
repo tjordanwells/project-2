@@ -41,13 +41,9 @@ exports.getUserPlanned = function(req, res) {
       return cat;
     });
 
-    res.render("user", {
+    res.render("planned", {
       usernav: true,
-      section: {
-        planned: true,
-        spent: false,
-        remaining: false
-      },
+      section: "planned",
       planData: planned,
       categoryData: cats
     });

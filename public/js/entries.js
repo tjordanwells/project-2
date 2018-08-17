@@ -25,10 +25,6 @@ $("#add").on("click", function() {
 $(".add").on("click", function() {
   console.log("I work");
   var cat = $(this).attr("data-category");
-<<<<<<< HEAD
-
-=======
->>>>>>> ee5ce72a24164b2bd029fe264daf58afa068b0b5
   var entry = $("#newEntry-" + cat)
     .val()
     .trim();

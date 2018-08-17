@@ -44,13 +44,9 @@ exports.getUserRemaining = function(req, res) {
       console.log(val.dataValues);
       category.push(val.dataValues);
     });
-    res.render("user", {
+    res.render("remaining", {
       usernav: true,
-      section: {
-        planned: false,
-        spent: false,
-        remaining: true
-      },
+      section: "remaining",
       planData: planned,
       spentData: spent,
       categoryData: category
