@@ -1,6 +1,8 @@
 //load bcrypt
 var bCrypt = require("bcrypt-nodejs");
 
+var db = require("../../models");
+
 module.exports = function(passport, user) {
   var User = user;
   var LocalStrategy = require("passport-local").Strategy;
@@ -53,12 +55,51 @@ module.exports = function(passport, user) {
               name: req.body.name
             };
 
-            User.create(data).then(function(newUser, created) {
+            User.create(data).then(function(newUser) {
               if (!newUser) {
                 return done(null, false);
               }
 
               if (newUser) {
+                var incomeCat = {
+                  category: "Income",
+                  UserId: newUser.dataValues.id
+                };
+                var housingCat = {
+                  category: "Housing",
+                  UserId: newUser.dataValues.id
+                };
+                var transCat = {
+                  category: "Transportation",
+                  UserId: newUser.dataValues.id
+                };
+                var foodCat = {
+                  category: "Food",
+                  UserId: newUser.dataValues.id
+                };
+                var debtCat = {
+                  category: "Debt",
+                  UserId: newUser.dataValues.id
+                };
+                var savingsCat = {
+                  category: "Savings",
+                  UserId: newUser.dataValues.id
+                };
+                var miscCat = {
+                  category: "Misc",
+                  UserId: newUser.dataValues.id
+                };
+
+                db.Category.bulkCreate([
+                  incomeCat,
+                  housingCat,
+                  transCat,
+                  foodCat,
+                  debtCat,
+                  savingsCat,
+                  miscCat
+                ]);
+
                 return done(null, newUser);
               }
             });
