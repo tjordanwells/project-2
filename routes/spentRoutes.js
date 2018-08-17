@@ -29,7 +29,7 @@ exports.getUserSpent = function(req, res) {
       console.log(val.dataValues);
       category.push(val.dataValues);
     });
-    res.render("user", {
+    res.render("spent", {
       usernav: true,
       section: {
         planned: false,
@@ -46,18 +46,14 @@ exports.postUserSpent = function(req, res) {
   db.Spent.create({
     entry: req.body.entry,
     amount: req.body.amount,
-    category: req.body.category,
+    CategoryId: req.body.category,
     UserId: req.user.id
-  }).then(function(data) {
-    console.log(data);
+  }).then(function(dbSpent) {
+    res.json(dbSpent);
   });
 };
 
-// app.post("/api/spent", function(req, res) {
-//   db.Spent.create(req.body).then(function(dbSpent) {
-//     res.json(dbSpent);
-//   });
-// });
+
 // app.delete("/api/spent/:id", function(req, res) {
 //   db.Spent.destroy({
 //     where: {

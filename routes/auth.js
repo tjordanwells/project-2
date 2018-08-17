@@ -14,6 +14,8 @@ module.exports = function(app, passport) {
 
   app.get("/user/remaining", isLoggedIn, remainingRoutes.getUserRemaining);
 
+  app.post("/user/spent", isLoggedIn, spentRoutes.postUserSpent);
+
   app.post(
     "/signup",
     passport.authenticate("local-signup", {

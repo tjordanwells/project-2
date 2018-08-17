@@ -17,6 +17,9 @@ $("#add").on("click", function() {
 
   console.log(newEntry);
   //POST route goes here
+  $.post("/user/spent", newEntry, function(data) {
+    console.log(data);
+  });
 });
 
 $(".add").on("click", function() {
