@@ -12,9 +12,13 @@ module.exports = function(app, passport) {
 
   app.get("/user/spent", isLoggedIn, spentRoutes.getUserSpent);
 
-  app.get("/user/remaining", isLoggedIn, remainingRoutes.getUserRemaining);
-
   app.post("/user/spent", isLoggedIn, spentRoutes.postUserSpent);
+
+  app.put("/user/spent", isLoggedIn, spentRoutes.putUserSpent);
+
+  app.delete("/user/spent", isLoggedIn, spentRoutes.deleteUserSpent);
+
+  app.get("/user/remaining", isLoggedIn, remainingRoutes.getUserRemaining);
 
   app.post(
     "/signup",
