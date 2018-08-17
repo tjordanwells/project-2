@@ -7,9 +7,7 @@ $("#add").on("click", function() {
     .val()
     .trim();
 
-  var category = $("#topCategory")
-    .val()
-    .trim();
+  var category = $("#topCategory").val();
 
   var newEntry = {
     entry: entry,
@@ -19,6 +17,9 @@ $("#add").on("click", function() {
 
   console.log(newEntry);
   //POST route goes here
+  $.post("/user/spent", newEntry, function(data) {
+    console.log(data);
+  });
 });
 
 $(".add").on("click", function() {
@@ -36,7 +37,7 @@ $(".add").on("click", function() {
     entry: entry,
     amount: amount,
     cateogry: cat
-  }
+  };
 
   console.log(newEntry);
   //POST route goes here
