@@ -1,11 +1,11 @@
 {
   "development": {
-    "username": "user",
-    "password": "password",
+    "username": "process.env.DB_USER_DEVELOPMENT",
+    "password": "process.env.DB_PASS_DEVELOPMENT",
     "database": "budget",
-    "host": "localhost",
+    "host": "process.env.DB_HOST_DEVELOPMENT",
     "dialect": "mysql",
-    "port": 3306
+    "port": 8889
   },
   "test": {
     "username": "root",
