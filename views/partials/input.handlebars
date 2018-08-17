@@ -45,7 +45,7 @@
             </div>
     <div class="control">
         {{#unless categoryData}}
-        <button class="button is-primary" data-section={{section}} data-action="add" data-category={{id}} id="add-{{category}}">Add</button>
+        <button class="button is-primary" data-section={{@root.section}} data-action="add" data-category={{id}} id="add-{{category}}">Add</button>
         {{/unless}}
         {{#if categoryData}}
             <button class="button is-primary" data-section={{section}} data-action="add" data-category="-1" id="add">Add</button>
