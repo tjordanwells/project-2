@@ -7,9 +7,7 @@ $("#add").on("click", function() {
     .val()
     .trim();
 
-  var category = $("#topCategory")
-    .val()
-    .trim();
+  var category = $("#topCategory").val();
 
   var newEntry = {
     entry: entry,
@@ -23,7 +21,7 @@ $("#add").on("click", function() {
 
 $(".add").on("click", function() {
   var cat = $(this).attr("data-category");
-  
+
   var entry = $("#newEntry-" + cat)
     .val()
     .trim();
@@ -36,7 +34,7 @@ $(".add").on("click", function() {
     entry: entry,
     amount: amount,
     cateogry: cat
-  }
+  };
 
   console.log(newEntry);
 });

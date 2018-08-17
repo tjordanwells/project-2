@@ -42,6 +42,17 @@ exports.getUserSpent = function(req, res) {
   });
 };
 
+exports.postUserSpent = function(req, res) {
+  db.Spent.create({
+    entry: req.body.entry,
+    amount: req.body.amount,
+    category: req.body.category,
+    UserId: req.user.id
+  }).then(function(data) {
+    console.log(data);
+  });
+};
+
 // app.post("/api/spent", function(req, res) {
 //   db.Spent.create(req.body).then(function(dbSpent) {
 //     res.json(dbSpent);
