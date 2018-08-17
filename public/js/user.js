@@ -56,16 +56,21 @@ var dropdownlistener = function() {
 var dropdownContentListener = function() {
   $(".dropdown-content > button").on("click", function() {
     var $action = $(this).attr("data-action");
-    var id = $(this)
+    var idData = $(this)
       .attr("id")
-      .split("_")[0];
-      console.log(id);
-    id = "entry-" + id;
+      .split("_");
 
+    console.log(idData);
     $(".dropdown").removeClass("is-active");
-
+  
+    var catId = idData[0].split[0];
     if ($action === "edit") {
-      toggleInputOn(id);
+      if(id.split("-")[0] ==="cat"){
+        categoryEditToggleOn(catId);
+      }else{
+        toggleInputOn("entry-" + id);
+      }
+      
     } else if ($action === "move") {
       $(".modal").addClass("is-active");
       moveModal(id);
@@ -84,38 +89,6 @@ var saveListener = function(id) {
   });
 };
 
-// $(".add").on("click", function() {
-//   var action = $(this)
-//     .attr("id")
-//     .split("-");
-//   var cat = action[1];
-//   console.log(action);
-//   var newEntry = {
-//     name: $("#newEntry" + cat)
-//       .val()
-//       .trim(),
-//     amount: $("#newAmount" + cat)
-//       .val()
-//       .trim(),
-//     category: $("#category" + cat).val()
-//   };
-//   console.log(newEntry);
-// });
-
-$("#addEntry").on("click", function() {
-  var newEntry = {
-    name: $("#newEntry")
-      .val()
-      .trim(),
-    amount: $("#newAmount")
-      .val()
-      .trim(),
-    category: $("#topCategory")
-      .val()
-      .trim()
-  };
-  console.log(newEntry);
-});
 
 var toggleInputOn = function(id) {
   var $entryText = $("#" + id + " td:nth-child(1) > .entryText");
@@ -217,6 +190,12 @@ var deleteModal = function (entryId) {
   $(".modal-card-foot :nth-child(2)")
     .removeClass("is-danger")
     .addClass("is-info");
+}
+
+//toggle category edit
+var categoryEditToggleOn = function(id) {
+  id = "#catInput" + id;
+ 
 }
 
 dropdownlistener();
