@@ -18,11 +18,22 @@
     </div>
 
     <div class="flex-center flex-column">
-        {{#each userData}}
-            <table class="table is-fullwidth is-striped" id={{category}}>
+        {{#each categoryData}}
+            <table class="table is-fullwidth is-striped" id="cat-{{id}}">
                 {{> category}} 
-                
-                {{> entries}}
+
+                <tbody class="entries hidden p-sm-bottom tbody-corrections">
+                    <tr>
+                        <td colspan="4">
+                            <div class="flex-center">
+                                {{> input}}
+                            </div>
+                        </td>
+                    </tr>
+                    {{#each entries}}
+                        {{> entries}}
+                    {{/each}}
+                </tbody>
             </table>
         {{/each}}
     </div>
@@ -50,3 +61,4 @@
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="/js/user.js"></script>
+<script type="text/javascript" src="/js/entries.js"></script>

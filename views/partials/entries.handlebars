@@ -1,24 +1,10 @@
-
-<tbody class="entries hidden p-sm-bottom tbody-corrections">
-    
-    <tr>
-        <td colspan="4">
-            <div class="flex-center">
-                {{> input}}
-            </div>
-        </td>
-    </tr>
-    
-    
-
-    {{#each entries}}
-        <tr id={{id}}>
+        <tr id="entry-{{id}}" data-category={{CategoryId}}>
             <td>
                 <div class="entryText">
-                    <h3 class="entry m-xlg-left is-size-7-mobile" id="entry-{{id}}">{{name}}</h3>
+                    <h3 class="entry m-xlg-left is-size-7-mobile" data-entry="{{id}}">{{entry}}</h3>
                 </div>
                 <div class="entryInput hidden">
-                    <input type="text" class="input" name="editEntry" id="editEntry-{{id}}" value={{name}}>
+                    <input type="text" class="input" name="editEntry" id="editEntry-{{id}}" value={{entry}}>
                 </div>
                 
             </td>
@@ -52,8 +38,6 @@
             </td>
             <td></td>
         </tr>
-    {{/each}}
-</tbody>
 
 
 

@@ -22,15 +22,25 @@ exports.getUserPlanned = function(req, res) {
 
     var planned = [];
     result[0].forEach(function(val) {
-      console.log(val.dataValues);
       planned.push(val.dataValues);
     });
 
     var category = [];
     result[1].forEach(function(val) {
-      console.log(val.dataValues);
       category.push(val.dataValues);
     });
+
+    var cats = category.map(function(cat) {
+      cat.entries = [];
+      planned.forEach(function(entry) {
+        if (cat.id === entry.CategoryId) {
+          cat.entries.push(entry);
+        }
+      });
+      console.log(cat);
+      return cat;
+    });
+
     res.render("user", {
       usernav: true,
       section: {
@@ -39,7 +49,7 @@ exports.getUserPlanned = function(req, res) {
         remaining: false
       },
       planData: planned,
-      categoryData: category
+      categoryData: cats
     });
   });
 };
