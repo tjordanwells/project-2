@@ -1,7 +1,7 @@
 $(document).ready(function() {
   event.preventDefault();
 
-  $("#signupSubmit").on("click", function(event) {
+  $("#signinSubmit").on("click", function(event) {
     event.preventDefault();
 
     var currentUser = {

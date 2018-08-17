@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $("#signinSubmit").on("click", function(event) {
+  $("#signupSubmit").on("click", function(event) {
     event.preventDefault();
     var newUser = {
       email: $("#userEmail")
@@ -13,7 +13,7 @@ $(document).ready(function() {
         .trim()
     };
 
-    $.post("/api/users", newUser).then(function(data) {
+    $.post("/signup", newUser).then(function(data) {
       console.log(data);
     });
   });
