@@ -37,7 +37,7 @@ exports.getUserPlanned = function(req, res) {
           cat.entries.push(entry);
         }
       });
-      console.log(cat)
+      console.log(cat);
       return cat;
     });
 
