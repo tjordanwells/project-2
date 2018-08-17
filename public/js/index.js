@@ -49,7 +49,7 @@ $("#signup").on("click", function() {
     .attr("id", "signup")
     .attr("name", "signup")
     .attr("method", "post")
-    .attr("action", "/");
+    .attr("action", "/signup");
 
   var name = input(
     "Name", 
