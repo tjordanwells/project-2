@@ -22,7 +22,6 @@ $(".top-submit").on("click", function() {
   // POST route goes here
   $.post("/user/planned", newEntry).then(function(data) {
     console.log(data);
-<<<<<<< HEAD
     var newRow = $("<tr>")
       .addClass("entryRow")
       .attr("id", "entry-" + data.id)
@@ -109,12 +108,9 @@ $(".top-submit").on("click", function() {
     infoBtn.appendTo(dropdownContent);
     infoBtn.append(deleteBtn);
     newTdThree.append(newTdFour);
-=======
     newRow(data);
->>>>>>> a55eaf7718b363f9db78e7be82878660ed19d046
   });
 });
-
 
 var newRow = function(data) {
   //console.log(data);
