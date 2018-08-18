@@ -1,55 +1,55 @@
-$("#add").on("click", function() {
-  var entry = $("#newEntry")
-    .val()
-    .trim();
+// $("#add").on("click", function() {
+//   var entry = $("#newEntry")
+//     .val()
+//     .trim();
 
-  var amount = $("#newAmount")
-    .val()
-    .trim();
+//   var amount = $("#newAmount")
+//     .val()
+//     .trim();
 
-  var category = $("#topCategory").val();
+//   var category = $("#topCategory").val();
 
-  var newEntry = {
-    entry: entry,
-    amount: amount,
-    category: category
-  };
+//   var newEntry = {
+//     entry: entry,
+//     amount: amount,
+//     category: category
+//   };
 
-  console.log(newEntry);
-  //POST route goes here
-  $.post("/user/spent", newEntry, function(data) {
-    console.log(data);
-  });
-});
+//   console.log(newEntry);
+//   //POST route goes here
+//   $.post("/user/spent", newEntry, function(data) {
+//     console.log(data);
+//   });
+// });
 
-$(".add").on("click", function() {
-  console.log("I work");
-  var cat = $(this).attr("data-category");
-  var entry = $("#newEntry-" + cat)
-    .val()
-    .trim();
+// $("button[data-action='add']").on("click", function() {
+//   console.log("I work");
+//   var cat = $(this).attr("data-category");
+//   var entry = $("#newEntry-" + cat)
+//     .val()
+//     .trim();
 
-  var amount = $("#newAmount-" + cat)
-    .val()
-    .trim();
+//   var amount = $("#newAmount-" + cat)
+//     .val()
+//     .trim();
 
-  var newEntry = {
-    entry: entry,
-    amount: amount,
-    cateogry: cat
-  };
+//   var newEntry = {
+//     entry: entry,
+//     amount: amount,
+//     cateogry: cat
+//   };
 
-  console.log(newEntry);
-  //POST route goes here
-});
+//   console.log(newEntry);
+//   //POST route goes here
+// });
 
 // Two Planned click events
-$("#add").on("click", function() {
-  var entry = $("#newEntry")
+$(".top-submit[data-action='add']").on("click", function() {
+  var entry = $("#top-newEntry")
     .val()
     .trim();
 
-  var amount = $("#newAmount")
+  var amount = $("#top-newAmount")
     .val()
     .trim();
 
@@ -70,17 +70,15 @@ $("#add").on("click", function() {
   $("#newEntry").val("");
   $("#newAmount").val("");
   $("#topCategory").val("select");
-  location.reload(false);
 });
 
-$(".add").on("click", function() {
+$(".table-submit").on("click", function() {
   var cat = $(this).attr("data-category");
-
-  var entry = $("#newEntry-" + cat)
+  var entry = $("#table-newEntry-" + cat)
     .val()
     .trim();
 
-  var amount = $("#newAmount-" + cat)
+  var amount = $("#table-newAmount-" + cat)
     .val()
     .trim();
 
