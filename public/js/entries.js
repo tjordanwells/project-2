@@ -174,7 +174,7 @@ $("#add").on("click", function() {
     console.log(data);
     var newRow = $("<tr>")
       .addClass("entryRow")
-      .attr("id", "entry-" + " " + data.id)
+      .attr("id", "entry-" + data.id)
       .attr("data-category", data.CategoryId);
     var newTdOne = $("<td>");
     var newTdTwo = $("<td>");
@@ -215,10 +215,11 @@ $("#add").on("click", function() {
       .attr("aria-haspopup", true)
       .attr("aria-controls", data.id + "-menu");
     var ellipsis = $("<i>").addClass("icon fas fa-ellipsis-h");
-    var menu = $("<div")
+    var menu = $("<div>")
       .addClass("dropdown-menu")
       .attr("id", data.id + "-menu")
       .attr("role", "menu");
+    console.log(amountSpan);
     var dropdownContent = $("<div>").addClass("dropdown-content p-sm");
     var infoBtn = $("<button>")
       .addClass("button is-info is-fullwidth m-xsm-bottom")
@@ -232,29 +233,29 @@ $("#add").on("click", function() {
       .attr("data-action", "delete")
       .attr("id", data.id + "_delete")
       .text("Delete");
-    $(".entries[data-category=" + data.CategoryId + "']")
-      .append(newRow)
-      .appendChild(newTdOne);
-    newTdOne.appendChild(entryText);
-    entryText.appendChild(header);
+    var tbody = $(".entries[data-category='" + data.CategoryId + "']");
+    tbody.append(newRow);
+    newTdOne.appendTo(newRow);
+    entryText.appendTo(newTdOne);
+    header.appendTo(newTdOne);
     entryText.append(entryInput);
-    entryInput.appendChild(entryEdit);
+    entryEdit.appendTo(entryInput);
     newTdOne.append(newTdTwo);
-    newTdTwo.appendChild(amountText);
-    amountText.appendChild(amountSpan);
+    amountText.appendTo(newTdTwo);
+    amountSpan.appendTo(amountText);
     amountText.append(amountInput);
-    amountInput.appendChild(amountEdit);
+    amountEdit.appendTo(amountInput);
     newTdTwo.append(newTdThree);
-    newTdThree.appendChild(saveDiv);
-    saveDiv.appendChild(saveButton);
-    saveButton.appendChild(icon);
+    saveDiv.appendTo(newTdThree);
+    saveButton.appendTo(saveDiv);
+    icon.appendTo(saveDiv);
     saveDiv.append(dropdown);
-    dropdown.appendChild(trigger);
-    trigger.appendChild(controlSpan);
-    controlSpan.appendChild(ellipsis);
+    trigger.appendTo(dropdown);
+    controlSpan.appendTo(trigger);
+    ellipsis.appendTo(controlSpan);
     dropdown.append(menu);
-    menu.appendChild(dropdownContent);
-    dropdownContent.appendChild(infoBtn);
+    dropdownContent.appendTo(menu);
+    infoBtn.appendTo(dropdownContent);
     infoBtn.append(deleteBtn);
     newTdThree.append(newTdFour);
   });
