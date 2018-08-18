@@ -32,9 +32,16 @@ exports.getUserPlanned = function(req, res) {
 
     var cats = category.map(function(cat) {
       cat.entries = [];
+      cat.total = [];
       planned.forEach(function(entry) {
         if (cat.id === entry.CategoryId) {
           cat.entries.push(entry);
+          cat.total.push(parseFloat(entry.amount));
+          console.log(cat.total);
+          var sumCat = cat.total.reduce(function(total, amount) {
+            return total + amount;
+          });
+          console.log(sumCat);
         }
       });
       console.log(cat);
