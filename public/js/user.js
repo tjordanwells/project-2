@@ -56,6 +56,7 @@ var dropdownlistener = function() {
 var dropdownContentListener = function() {
   $(".dropdown-content > button").on("click", function() {
     var $action = $(this).attr("data-action");
+    console.log($action);
     var idData = $(this)
       .attr("id")
       .split("_");
@@ -63,9 +64,13 @@ var dropdownContentListener = function() {
     console.log(idData);
     $(".dropdown").removeClass("is-active");
   
-    var catId = idData[0].split[0];
+    var isCat = idData[0].split("-")[0];
+    var catId = idData[0].split("-")[1]
+    id = idData[1].split('-')[1];
+    console.log(catId);
     if ($action === "edit") {
-      if(id.split("-")[0] ==="cat"){
+      if(isCat ==="cat"){
+        console.log("I work!");
         categoryEditToggleOn(catId);
       }else{
         toggleInputOn("entry-" + id);
@@ -194,8 +199,11 @@ var deleteModal = function (entryId) {
 
 //toggle category edit
 var categoryEditToggleOn = function(id) {
-  id = "#catInput" + id;
+  id = "#catInput-" + id;
+  console.log($(id))
  
 }
 
 dropdownlistener();
+
+

@@ -1,0 +1,25 @@
+<div class="field has-addons p-sm">
+    <div class="control has-icons-left entry-width">
+        <input type="text" class="input is-primary" id="top-newEntry" placeholder="New entry">
+        <span class="icon is-small is-left"><i class="fas fa-pencil-alt"></i></span>
+    </div>
+
+    <div class="control has-icons-left amount-width">
+        <input type="text" class="input is-primary" id="top-newAmount" placeholder="Amount">
+        <span class="icon is-small is-left"><i class="fas fa-dollar-sign"></i></span>
+    </div>
+    <div class="control has-icons-left select-width">
+                <span class="select is-primary">
+                    <select name="category" id="topCategory">
+                        <option value="-1">Category</option>
+                        {{#each categoryData}}
+                        <option value="{{id}}">{{category}}</option>
+                        {{/each}}
+                    </select>
+                </span>
+                <span class="icon is-small is-left"><i class="fas fa-bars"></i></span>
+            </div>
+    <div class="control">
+        <button class="button is-primary top-submit" data-section={{@root.section}} data-action="add" data-category={{id}} id="add">Add</button>
+    </div>
+</div>
