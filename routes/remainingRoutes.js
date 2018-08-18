@@ -23,7 +23,7 @@ exports.getUserRemaining = function(req, res) {
   });
 
   Promise.all([planQuery, spentQuery, catQuery]).then(function(result) {
-    result[0]; //]planned
+    result[0]; //planned
     result[1]; // spent
     result[2]; // categories.
 
@@ -45,6 +45,12 @@ exports.getUserRemaining = function(req, res) {
       category.push(val.dataValues);
     });
 
+    category.forEach(function(val, i) {
+      console.log(val);
+      if (val.category === "Income") {
+        category.splice(i, 1);
+      }
+    });
     var cats = category.map(function(cat) {
       cat.entries = [];
       cat.total = [];
