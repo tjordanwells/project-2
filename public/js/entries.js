@@ -1,4 +1,3 @@
-
 $(".top-submit").on("click", function() {
   console.log("I work")
   var entry = $("#top-newEntry")
@@ -22,96 +21,7 @@ $(".top-submit").on("click", function() {
   // POST route goes here
   $.post("/user/planned", newEntry).then(function(data) {
     console.log(data);
-<<<<<<< HEAD
-    var newRow = $("<tr>")
-      .addClass("entryRow")
-      .attr("id", "entry-" + data.id)
-      .attr("data-category", data.CategoryId);
-    var newTdOne = $("<td>");
-    var newTdTwo = $("<td>");
-    var newTdThree = $("<td>");
-    var newTdFour = $("<td>");
-    var entryText = $("<div>").addClass("entryText");
-    var header = $("<h3>")
-      .addClass("entry m-xlg-left is-size-7-mobile")
-      .attr("data-entry", data.id)
-      .text(data.entry);
-    var entryEdit = $("<div>").addClass("entryInput hidden");
-    var entryInput = $("<input>")
-      .attr("type", "text")
-      .addClass("input")
-      .attr("name", "editEntry")
-      .attr("id", "editEntry-" + data.id)
-      .attr("value", data.entry);
-    var amountText = $("<div>").addClass("amountText");
-    var amountSpan = $("<span>")
-      .addClass("amount m-sm-left is-size-7-mobile")
-      .attr("id", "amount-" + data.id)
-      .text(data.amount);
-    var amountInput = $("<div>").addClass("amountInput hidden");
-    var amountEdit = $("<input>")
-      .attr("type", "text")
-      .addClass("input")
-      .attr("name", "editInput")
-      .attr("id", "editInput-" + data.id)
-      .attr("value", data.amount);
-    var saveDiv = $("<div>").addClass("saveBtn hidden");
-    var saveButton = $("<button>")
-      .addClass("button is-primary")
-      .attr("data", "planned");
-    var icon = $("<i>").addClass("far fa-save");
-    var dropdown = $("<div>").addClass("dropdown");
-    var trigger = $("<div>").addClass("dropdown-trigger");
-    var controlSpan = $("<span>")
-      .attr("aria-haspopup", true)
-      .attr("aria-controls", data.id + "-menu");
-    var ellipsis = $("<i>").addClass("icon fas fa-ellipsis-h");
-    var menu = $("<div>")
-      .addClass("dropdown-menu")
-      .attr("id", data.id + "-menu")
-      .attr("role", "menu");
-    console.log(amountSpan);
-    var dropdownContent = $("<div>").addClass("dropdown-content p-sm");
-    var infoBtn = $("<button>")
-      .addClass("button is-info is-fullwidth m-xsm-bottom")
-      .attr("data-section", "planned")
-      .attr("data-action", "edit")
-      .attr("id", data.id + "_edit")
-      .text("Edit");
-    var deleteBtn = $("<button>")
-      .addClass("button is-danger is-fullwidth")
-      .attr("data-section", "planned")
-      .attr("data-action", "delete")
-      .attr("id", data.id + "_delete")
-      .text("Delete");
-    var tbody = $(".entries[data-category='" + data.CategoryId + "']");
-    tbody.append(newRow);
-    newTdOne.appendTo(newRow);
-    entryText.appendTo(newTdOne);
-    header.appendTo(newTdOne);
-    entryText.append(entryInput);
-    entryEdit.appendTo(entryInput);
-    newTdOne.append(newTdTwo);
-    amountText.appendTo(newTdTwo);
-    amountSpan.appendTo(amountText);
-    amountText.append(amountInput);
-    amountEdit.appendTo(amountInput);
-    newTdTwo.append(newTdThree);
-    saveDiv.appendTo(newTdThree);
-    saveButton.appendTo(saveDiv);
-    icon.appendTo(saveDiv);
-    saveDiv.append(dropdown);
-    trigger.appendTo(dropdown);
-    controlSpan.appendTo(trigger);
-    ellipsis.appendTo(controlSpan);
-    dropdown.append(menu);
-    dropdownContent.appendTo(menu);
-    infoBtn.appendTo(dropdownContent);
-    infoBtn.append(deleteBtn);
-    newTdThree.append(newTdFour);
-=======
     newRow(data);
->>>>>>> a55eaf7718b363f9db78e7be82878660ed19d046
   });
 });
 
