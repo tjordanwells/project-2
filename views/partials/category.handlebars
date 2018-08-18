@@ -11,7 +11,19 @@
         <th>
             <div id="catAmountText">
                 <span class="is-size-6 is-size-7-mobile">Total: </span>
-                <span class="subtitle is-size-7-mobile has-text-success">$Amount</span>
+                <span class="subtitle is-size-7-mobile has-text-success">
+                    {{#if remaining}}
+                        {{remaining}}
+                    {{/if}}
+                    {{#unless remaining}}
+                        {{#if sum}}
+                            ${{sum}}
+                        {{/if}}
+                        {{#unless sum}}
+                            $0
+                        {{/unless}}
+                    {{/unless}}
+                </span>
             </div>
         </th>
         <th>

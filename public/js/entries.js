@@ -1,3 +1,4 @@
+
 $(".top-submit").on("click", function() {
   console.log("I work")
   var entry = $("#top-newEntry")
@@ -24,6 +25,7 @@ $(".top-submit").on("click", function() {
     newRow(data);
   });
 });
+
 
 var newRow = function(data) {
   //console.log(data);
@@ -105,5 +107,4 @@ var newRow = function(data) {
 
   tbody.append(row);
 
-  
 }
