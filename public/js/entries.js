@@ -1,9 +1,11 @@
-$("#add").on("click", function() {
-  var entry = $("#newEntry")
+
+$(".top-submit").on("click", function() {
+  console.log("I work")
+  var entry = $("#top-newEntry")
     .val()
     .trim();
 
-  var amount = $("#newAmount")
+  var amount = $("#top-newAmount")
     .val()
     .trim();
 
