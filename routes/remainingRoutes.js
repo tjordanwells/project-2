@@ -44,12 +44,38 @@ exports.getUserRemaining = function(req, res) {
       console.log(val.dataValues);
       category.push(val.dataValues);
     });
+
+    var cats = category.map(function(cat) {
+      cat.entries = [];
+      cat.total = [];
+      cat.remaining = [];
+      spent.forEach(function(entry) {
+        if (cat.id === entry.CategoryId) {
+          cat.entries.push(entry);
+          cat.total.push(parseFloat(entry.amount));
+        }
+      });
+      planned.forEach(function(entry) {
+        if (cat.id === entry.CategoryId) {
+          cat.total.push(parseFloat(entry.amount));
+          cat.remaining = cat.total.reduce(function(total, amount) {
+            var addition = total * 100 + amount * 100;
+            var divide = addition / 100;
+            return divide;
+          });
+          console.log(cat.remaining);
+        }
+      });
+      console.log(cat);
+      return cat;
+    });
+
     res.render("remaining", {
       usernav: true,
       section: "remaining",
       planData: planned,
       spentData: spent,
-      categoryData: category
+      categoryData: cats
     });
   });
 };

@@ -40,7 +40,9 @@ exports.getUserPlanned = function(req, res) {
           cat.total.push(parseFloat(entry.amount));
           console.log(cat.total);
           cat.sum = cat.total.reduce(function(total, amount) {
-            return total + amount;
+            var addition = total * 100 + amount * 100;
+            var divide = addition / 100;
+            return divide;
           });
           console.log(cat.sum);
         }
