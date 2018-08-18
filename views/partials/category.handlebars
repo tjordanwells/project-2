@@ -19,7 +19,7 @@
         </th>
         <th>
             <div class="saveBtn hidden">
-                <button class="button is-primary" data-section={{section}}>
+                <button class="button is-primary" data-section={{@root.section}}>
                     <i class='far fa-save'S></i>
                 </button>
             </div>
@@ -29,8 +29,8 @@
                     </div>
                     <div class="dropdown-menu" id="cat-{{id}}_menu" role="menu">
                         <div class="dropdown-content p-sm">
-                            <button class="button is-info is-fullwidth m-xsm-bottom" data-cateogry={{id}} data-section={{section}} data-action="edit" id="cat-{{id}}_edit">Edit</button>
-                            <button class="button is-danger is-fullwidth" data-category={{id}} data-section={{section}} data-action="delete" id="cat-{{id}}_delete">Delete</button>
+                            <button class="button is-info is-fullwidth m-xsm-bottom" data-cateogry={{id}} data-section={{@root.section}} data-action="edit" id="cat-{{id}}_edit">Edit</button>
+                            <button class="button is-danger is-fullwidth" data-category={{id}} data-section={{@root.section}} data-action="delete" id="cat-{{id}}_delete">Delete</button>
                         </div>
                     </div>
                 </div>

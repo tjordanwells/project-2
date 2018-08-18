@@ -18,8 +18,8 @@
             </td>
             <td>
                 <div class="saveBtn hidden">
-                    <button class="button is-primary" data-section={{section}}>
-                        <i class='far fa-save'S></i>
+                    <button class="button is-primary" data-section={{@root.section}}>
+                        <i class='far fa-save'></i>
                     </button>
                 </div>
                 <div class="dropdown">
@@ -28,9 +28,9 @@
                     </div>
                     <div class="dropdown-menu" id="{{id}}-menu" role="menu">
                         <div class="dropdown-content p-sm">
-                            <button class="button is-info is-fullwidth m-xsm-bottom" data-section={{section}} data-action="edit" id="{{id}}_edit">Edit</button>
-                            <button class="button is-warning has-text-white is-fullwidth m-xsm-bottom" data-section={{section}} data-action="move" id="{{id}}_move">Move</button>
-                            <button class="button is-danger is-fullwidth" id="{{id}}_delete" data-action="delete" data-section={{section}}>Delete</button>
+                            <button class="button is-info is-fullwidth m-xsm-bottom" data-section={{@root.section}} data-action="edit" id="{{id}}_edit">Edit</button>
+                            <button class="button is-warning has-text-white is-fullwidth m-xsm-bottom" data-section={{@root.section}} data-action="move" id="{{id}}_move">Move</button>
+                            <button class="button is-danger is-fullwidth" id="{{id}}_delete" data-action="delete" data-section={{@root.section}}>Delete</button>
                         </div>
                     </div>
                 </div>
