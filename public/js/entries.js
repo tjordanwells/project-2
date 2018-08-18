@@ -25,7 +25,6 @@ $(".top-submit").on("click", function() {
   });
 });
 
-
 var newRow = function(data) {
   //console.log(data);
   //-----Table Row-------//
