@@ -1,11 +1,11 @@
 <thead>
-    <tr>
+    <tr id="category-{{id}}">
         <th>
-            <div id="catText">
+            <div class="catText" data-category={{id}}>
                 <h3 class="subtitle has-text-weight-bold m-lg-left is-size-6-mobile category" data-category={{id}}>{{category}}</h3>
             </div>
             <div id="catInput-{{id}}" class="hidden">
-                <input type="text" class="input" name="editCatName" value={{cateogry}}>
+                <input type="text" class="input" name="editCatName" value={{category}}>
             </div>
         </th>
         <th>
@@ -30,22 +30,22 @@
             <span class="icon is-medium"><i class="fas fa-caret-up fa-2x caret-margin" data-category={{id}}></i></span>
         </th>
         <th>
+            <div class="dropdown is-pulled-right">
+                <div class="dropdown-trigger">
+                    <span aria-haspopup="true" aria-controls="cat-{{id}}_menu"><i class="icon fas fa-ellipsis-h"></i></span>
+                </div>
+                <div class="dropdown-menu" id="cat-{{id}}_menu" role="menu">
+                    <div class="dropdown-content p-sm">
+                        <button class="button is-info is-fullwidth m-xsm-bottom" data-cateogry={{id}} data-section={{@root.section}} data-action="edit" id="cat-{{id}}_edit">Edit</button>
+                        <button class="button is-danger is-fullwidth" data-category={{id}} data-section={{@root.section}} data-action="delete" id="cat-{{id}}_delete">Delete</button>
+                    </div>
+                </div>
+            </div>
             <div class="saveBtn hidden">
-                <button class="button is-primary" data-section={{@root.section}}>
+                <button class="button is-primary" data-category={{id}} data-section={{@root.section}}>
                     <i class='far fa-save'S></i>
                 </button>
             </div>
-            <div class="dropdown is-pulled-right">
-                    <div class="dropdown-trigger">
-                        <span aria-haspopup="true" aria-controls="cat-{{id}}_menu"><i class="icon fas fa-ellipsis-h"></i></span>
-                    </div>
-                    <div class="dropdown-menu" id="cat-{{id}}_menu" role="menu">
-                        <div class="dropdown-content p-sm">
-                            <button class="button is-info is-fullwidth m-xsm-bottom" data-cateogry={{id}} data-section={{@root.section}} data-action="edit" id="cat-{{id}}_edit">Edit</button>
-                            <button class="button is-danger is-fullwidth" data-category={{id}} data-section={{@root.section}} data-action="delete" id="cat-{{id}}_delete">Delete</button>
-                        </div>
-                    </div>
-                </div>
         </th>
     </tr>
 </thead>
